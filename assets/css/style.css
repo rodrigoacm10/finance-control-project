@@ -106,3 +106,122 @@ html {
   display: flex;
   justify-content: space-between;
 }
+
+/**********************
+  INDEX PAGE
+***********************/
+
+.section {
+  margin: 0 19.2rem;
+}
+
+.values-section {
+  display: grid;
+  grid-template-columns: 25fr 75fr;
+  gap: 2.4rem;
+}
+
+.perfil-container {
+  background-color: aqua;
+  padding: 2.4rem;
+}
+
+.values-container {
+  display: flex;
+  align-items: center;
+  background-color: aquamarine;
+}
+
+.values-container-content {
+  background-color: rgb(158, 201, 201);
+  width: 100%;
+  margin: 3.8rem;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 2.4rem;
+}
+
+.values-container-primary {
+  background-color: #c5c5c5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4.8rem 9.6rem;
+}
+
+.eye-icon {
+  width: 4.8rem;
+  height: 4.8rem;
+}
+
+.value-name-primary {
+  font-size: 2.4rem;
+}
+
+.value-money-primary {
+  font-size: 4.8rem;
+}
+
+.values-container-secundary {
+  display: grid;
+  gap: 2.4rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.value-secundary {
+  padding: 4.8rem 9.6rem;
+}
+
+.value-container-secundary {
+  background-color: #c5c5c5;
+}
+
+.value-name-secundary {
+  font-size: 2rem;
+}
+
+.value-money-secundary {
+  font-size: 3.6rem;
+}
+
+/* main {
+  height: auto;
+} */
+.img-container-index {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 1rem;
+  /* margin: 2rem; */
+  margin-bottom: 2rem;
+  border-radius: 11px;
+  background-color: aquamarine;
+}
+
+.img {
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.btn-perfil {
+  /* margin: 0 2rem; */
+}
+
+.perfil-name {
+  font-size: 1.6rem;
+}
+
+/**********************
+  MOVEMENT SECTION
+***********************/
+
+.movement-section {
+  margin-top: 9.6rem;
+  background-color: red;
+}
