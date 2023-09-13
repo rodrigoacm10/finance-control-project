@@ -3,6 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Outfit:wght@400;700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="assets/css/style.css" />
     <script defer type="module" src="assets/js/script.js"></script>
     <title>Document</title>
@@ -23,7 +31,7 @@
           </div>
 
           <div class="buttons-container">
-            <button class="btn-perfil">a</button>
+            <button class="btn btn-perfil">Sair</button>
           </div>
         </div>
 
@@ -31,7 +39,7 @@
           <div class="values-container-content">
             <div class="values-container-primary">
               <div class="value-primary">
-                <p class="value-name-primary">valor</p>
+                <p class="value-name-primary">Saldo total</p>
                 <p class="value-money-primary">R$ 00,00</p>
               </div>
               <div>
@@ -60,14 +68,14 @@
             <div class="values-container-secundary">
               <div class="value-container-secundary">
                 <div class="value-secundary">
-                  <p class="value-name-secundary">valor</p>
+                  <p class="value-name-secundary">Contas a pagar</p>
                   <p class="value-money-secundary">R$ 00,00</p>
                 </div>
               </div>
 
               <div class="value-container-secundary">
                 <div class="value-secundary">
-                  <p class="value-name-secundary">valor</p>
+                  <p class="value-name-secundary">Contas a receber</p>
                   <p class="value-money-secundary">R$ 00,00</p>
                 </div>
               </div>
@@ -77,7 +85,83 @@
       </section>
 
       <section class="movement-section section">
-        <p>test</p>
+        <div class="add-mov-container">
+          <!-- <div class="add-mov-function">
+            <p>test</p>
+          </div> -->
+
+          <div class="add-mov-function">
+            <p class="mov-function-name">Adicionar Receita</p>
+          </div>
+
+          <div class="add-mov-function">
+            <p class="mov-function-name">Adicionar Despesa</p>
+          </div>
+
+          <div class="add-mov-function">
+            <p class="mov-function-name">Guardado</p>
+          </div>
+        </div>
+
+        <div class="add-mov-action">
+          <div class="data-form">
+            <div>
+              <!-- <label for="select-data">data</label> -->
+              <p>data</p>
+              <select name="" id="select-data" class="form" required>
+                <option value="today">Hoje</option>
+                <option value="schedule">Agendar</option>
+              </select>
+            </div>
+
+            <input class="hidden" type="date" id="txData" />
+          </div>
+
+          <div class="situation-form">
+            <p>Situação</p>
+            <p class="form">recebido</p>
+          </div>
+
+          <div class="value-form">
+            <p>Valor</p>
+            <p class="form">Valor</p>
+          </div>
+
+          <div class="category-form">
+            <p>Categoria</p>
+            <p class="form">categoria</p>
+          </div>
+
+          <div class="description-form">
+            <p>Descrição</p>
+            <p class="form">descrição</p>
+          </div>
+
+          <button>concluir</button>
+        </div>
+      </section>
+
+      <section class="extract-section section">
+        <div class="extract-container">
+          <p class="section-title">Extrato</p>
+          <div class="extract-mov-container">
+            <div class="moviment">
+              <p class="mov-data">13/09/2023</p>
+              <p class="mav-situation">recebido</p>
+              <p class="mav-value">+ R$150.00</p>
+              <p class="mav-category">renda</p>
+              <p class="mav-description">salário</p>
+            </div>
+
+            <div class="moviment">
+              <p class="mov-data">13/09/2023</p>
+              <p class="mav-situation">recebido</p>
+              <p class="mav-value">+ R$150.00</p>
+              <p class="mav-category">renda</p>
+              <p class="mav-description">salário</p>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
 

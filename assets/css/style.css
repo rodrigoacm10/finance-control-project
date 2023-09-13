@@ -8,6 +8,13 @@ html {
   font-size: 62.5%;
 }
 
+body {
+  font-family: "Outfit", sans-serif;
+}
+
+.hidden {
+  display: none;
+}
 /**********************
   LOGIN PAGE
 ***********************/
@@ -88,12 +95,13 @@ html {
 
 .btn {
   border: none;
-}
-
-.btn-sing-in {
   width: 100%;
   padding: 1.4rem 0;
   border-radius: 6px;
+}
+
+.btn-sing-in {
+  background-color: #8b8b8b;
 }
 
 .btns-container {
@@ -112,7 +120,9 @@ html {
 ***********************/
 
 .section {
-  margin: 0 19.2rem;
+  /* margin: 0 19.2rem; */
+  width: 120rem;
+  margin: 0 auto;
 }
 
 .values-section {
@@ -121,24 +131,26 @@ html {
   gap: 2.4rem;
 }
 
-.perfil-container {
-  background-color: aqua;
-  padding: 2.4rem;
-}
-
 .values-container {
   display: flex;
   align-items: center;
-  background-color: aquamarine;
+  /* background-color: aquamarine; */
+  background-color: #ebebeb;
+  border-radius: 9px;
 }
 
 .values-container-content {
-  background-color: rgb(158, 201, 201);
+  /* background-color: rgb(158, 201, 201); */
   width: 100%;
   margin: 3.8rem;
   display: grid;
   grid-template-rows: 1fr 1fr;
   gap: 2.4rem;
+}
+
+.values-container-primary,
+.value-container-secundary {
+  border-radius: 9px;
 }
 
 .values-container-primary {
@@ -174,10 +186,12 @@ html {
 
 .value-container-secundary {
   background-color: #c5c5c5;
+  display: flex;
+  align-items: center;
 }
 
 .value-name-secundary {
-  font-size: 2rem;
+  font-size: 1.4rem;
 }
 
 .value-money-secundary {
@@ -187,6 +201,14 @@ html {
 /* main {
   height: auto;
 } */
+.perfil-container {
+  /* background-color: aqua; */
+  background-color: #ebebeb;
+  /* border: 1px solid #8b8b8b; */
+  padding: 2.4rem;
+  border-radius: 9px;
+}
+
 .img-container-index {
   display: flex;
   flex-direction: column;
@@ -197,7 +219,7 @@ html {
   /* margin: 2rem; */
   margin-bottom: 2rem;
   border-radius: 11px;
-  background-color: aquamarine;
+  background-color: #c5c5c5;
 }
 
 .img {
@@ -210,7 +232,7 @@ html {
 }
 
 .btn-perfil {
-  /* margin: 0 2rem; */
+  background-color: #8b8b8b;
 }
 
 .perfil-name {
@@ -222,6 +244,82 @@ html {
 ***********************/
 
 .movement-section {
-  margin-top: 9.6rem;
-  background-color: red;
+  margin-top: 6.4rem;
+  /* background-color: rgb(189, 166, 166); */
+}
+
+.add-mov-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7.2rem;
+}
+
+.add-mov-function {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* text-align: center; */
+  background-color: #c5c5c5;
+  padding: 2.4rem 4.8rem;
+  border-radius: 9px;
+}
+
+.mov-function-name {
+  font-size: 1.6rem;
+}
+
+.add-mov-action {
+  margin-top: 2rem;
+  padding: 2.4rem;
+  border-radius: 9px;
+  background-color: #c5c5c5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form {
+  margin-top: 1rem;
+}
+
+.data-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/**********************
+  EXTRACT SECTION
+***********************/
+
+.section-title {
+  font-size: 2.4rem;
+}
+
+.extract-section {
+  margin-top: 6.4rem;
+}
+
+.extract-container {
+  background-color: #ebebeb;
+  border-radius: 9px;
+  padding: 2.4rem;
+}
+
+.extract-mov-container {
+  background-color: #c5c5c5;
+  border-radius: 9px;
+  margin-top: 2rem;
+  padding: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.moviment {
+  display: flex;
+  justify-content: space-between;
+  background-color: #8b8b8b;
+  padding: 1.4rem 2.8rem;
+  border-radius: 9px;
 }
