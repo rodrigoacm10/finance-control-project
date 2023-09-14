@@ -18,6 +18,11 @@ body {
 .hidden {
   display: none;
 }
+
+.hover:hover {
+  transition: all 0.3s;
+  background-color: #636363;
+}
 /**********************
   LOGIN PAGE
 ***********************/
@@ -297,16 +302,64 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1.2rem;
+}
+
+.form-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .form {
   margin-top: 1rem;
+  border-radius: 9px;
+  border: 1px solid #8b8b8b;
+  padding: 0.6rem 1.2rem;
+  font-size: 1.6rem;
+}
+
+.form-label {
+  font-size: 1.6rem;
+  text-align: center;
 }
 
 .data-form {
   display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
+  flex-direction: row;
+  /* gap: 1.2rem; */
+}
+
+.input-data {
+  /* top: 25%; */
+  border-radius: 9px;
+  border: 1px solid #8b8b8b;
+  align-self: end;
+  height: 3.2rem;
+  padding: 0.8rem 0.4rem;
+  font-size: 1.4rem;
+}
+
+#situation-form-input {
+  background-color: rgb(114, 241, 114);
+}
+
+.to-recive {
+  background-color: rgb(66, 128, 66) !important;
+  /* background-color: rgb(0, 0, 0) ; */
+}
+
+.value-form input {
+  width: 12rem;
+  text-align: center;
+}
+
+.btn-add-mov {
+  border: none;
+  border-radius: 9px;
+  background-color: #8b8b8b;
+  padding: 1.2rem 2.4rem;
+  align-self: flex-end;
 }
 
 /**********************
@@ -343,4 +396,16 @@ body {
   background-color: #FD9B28;
   padding: 1.4rem 2.8rem;
   border-radius: 9px;
+}
+
+.moviment p {
+  font-size: 1.6rem;
+}
+
+.icon-mov {
+  border-radius: 1000px;
+  width: 2.4rem;
+  height: 2.4rem;
+  padding: 0.4rem;
+  background-color: #5c5c5c;
 }
