@@ -1,6 +1,7 @@
 import * as model from "./model.js";
 import AddMovView from "./views/indexPage/addMovView.js";
 import LoadPageInfoView from "./views/indexPage/loadPageInfoView.js";
+import toggleEye from './views/indexPage/toggleEye.js';
 
 const controlerLoadPage = function () {
   model.state.currentAccountIndex = LoadPageInfoView.getAccIndex();
@@ -18,5 +19,6 @@ const init = function () {
   // console.log(model.state.currentAccount);
   console.log(model.state);
   LoadPageInfoView.addHandlerLoadPage(controlerLoadPage);
+  toggleEye.addEventListenerEyeBtn();
 };
 init();

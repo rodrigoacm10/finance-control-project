@@ -26,10 +26,10 @@ class LoadPageInfoView {
 
     // console.log(this);
     // console.log(data);
-    this._userName.textContent = data.username;
-    this._userImage.src = data.userImage;
+    this._userName.textContent = data?.username;
+    this._userImage.src = data?.userImage;
     // data.totalValue === 0 ? ;
-    if (data.totalValue === 0) {
+    if (data?.totalValue === 0) {
     }
   }
 
