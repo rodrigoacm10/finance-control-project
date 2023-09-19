@@ -166,9 +166,20 @@ body {
   padding: 4.8rem 9.6rem;
 }
 
+.eye-button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
 .eye-icon {
+  display: none;
   width: 4.8rem;
   height: 4.8rem;
+}
+
+.visible {
+  display: block;
 }
 
 .value-name-primary {
@@ -177,6 +188,12 @@ body {
 
 .value-money-primary {
   font-size: 4.8rem;
+}
+
+.hideValue {
+  border-radius: 8px;
+  background-color: black;
+  user-select: none;
 }
 
 .values-container-secundary {
