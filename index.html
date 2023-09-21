@@ -98,47 +98,47 @@
             <p>test</p>
           </div> -->
 
-          <div class="select_add-mov-function"> <!--botão selecionado -->
-            <p class="select-mov-function-name">Adicionar Receita</p> <!--titulo selecionado -->
+          <div class="add-mov-function add-mov-function-revenue">
+            <p class="mov-function-name">Adicionar Receita</p>
           </div>
 
-          <div class="add-mov-function">
+          <div class="add-mov-function add-mov-function-expense">
             <p class="mov-function-name">Adicionar Despesa</p>
           </div>
 
-          <div class="add-mov-function">
+          <div class="add-mov-function add-mov-function-kept">
             <p class="mov-function-name">Guardado</p>
           </div>
         </div>
 
-        <div class="add-mov-action">
+        <div class="add-mov-action add-mov-action-revenue hidden">
           <div class="data-form form-div">
             <div>
               <!-- <label for="select-data">data</label> -->
               <p class="form-label">data</p>
-              <select name="" id="select-data" class="form" required>
+              <select name="" id="select-data" class="select-data select-data-revenue form" required>
                 <option value="today">Hoje</option>
                 <option value="schedule">Agendar</option>
               </select>
             </div>
 
-            <input class="hidden input-data" type="date" id="input-data" />
+            <input class="hidden input-data input-data-revenue" type="date" id="input-data" />
           </div>
 
           <div class="situation-form form-div">
             <p class="form-label">Situação</p>
-            <p id="situation-form-input" class="form ">recebido</p>
+            <p id="situation-form-input" class="situation-form-input situation-form-input-revenue form received">recebido</p>
           </div>
 
           <div class="value-form form-div">
             <p class="form-label">Valor</p>
-            <input id="value-form-input" type="number" class="form " placeholder="1000,00" value="0.00"></input>
+            <input id="value-form-input" type="number" class="value-form-input value-form-input-revenue form " placeholder="1000,00" value="0.00"></input>
           </div>
 
           <div class="category-form form-div">
             <p class="form-label">Categoria</p>
             <div>
-                <select class="form" name="" id="select-category">
+                <select class="select-category select-category-revenue form" name="" id="select-category">
               <option value="renda">Renda</option>
               <option value="transporte">Transporte</option>
               <option value="alimentação">Alimentação</option>
@@ -151,10 +151,57 @@
 
           <div class="description-form form-div">
             <p class="form-label">Descrição</p>
-            <input id="description-form-input" type="text" class="form" placeholder="Ex: Uber"></input>
+            <input id="description-form-input" type="text" class="description-form-input description-form-input-revenue form" placeholder="Ex: Uber"></input>
           </div>
 
-          <button class="btn-add-mov hover">concluir &rarr;</button>
+          <button class="btn-add-mov btn-add-mov-revenue hover">concluir &rarr;</button>
+        </div>
+
+
+        <div class="add-mov-action add-mov-action-expense hidden">
+          <div class="data-form form-div">
+            <div>
+          
+              <p class="form-label">data</p>
+              <select name="" id="select-data" class="select-data select-data-expense form" required>
+                <option value="today">Hoje</option>
+                <option value="schedule">Agendar</option>
+              </select>
+            </div>
+
+            <input class="hidden input-data input-data-expense" type="date" id="input-data" />
+          </div>
+
+          <div class="situation-form form-div">
+            <p class="form-label">Situação</p>
+            <p id="situation-form-input" class="form payed situation-form-inpu situation-form-input-expense">pago</p>
+          </div>
+
+          <div class="value-form form-div">
+            <p class="form-label">Valor</p>
+            <input id="value-form-input" type="number" class="form value-form-input value-form-input-expense " placeholder="1000,00" value="0.00"></input>
+          </div>
+
+          <div class="category-form form-div">
+            <p class="form-label">Categoria</p>
+            <div>
+                <select class="form select-category select-category-expense" name="" id="select-category">
+              <option value="renda">Renda</option>
+              <option value="transporte">Transporte</option>
+              <option value="alimentação">Alimentação</option>
+            </select>
+            <button class="form">Add Categoria</button>
+            </div>
+          
+  
+          </div>
+
+          <div class="description-form form-div">
+            <p class="form-label">Descrição</p>
+            <input id="description-form-input" type="text" class="form description-form-input description-form-input-expense" placeholder="Ex: Uber"></input>
+          </div>
+
+          <button class="btn-add-mov btn-add-mov-expense hover">concluir &rarr;</button>
         </div>
       </section>
 
