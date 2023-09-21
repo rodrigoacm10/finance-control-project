@@ -7,15 +7,29 @@ export const state = {
       moviments: [
         {
           data: "2023-09-13",
-          situation: "",
+          situation: "recebido",
           value: 100.0,
           category: "Renda",
           description: "salário",
         },
         {
-          data: "2023-09-20",
-          situation: "",
+          data: "2023-09-25",
+          situation: "a receber",
           value: 100.0,
+          category: "Renda",
+          description: "salário",
+        },
+        {
+          data: "2023-09-13",
+          situation: "pago",
+          value: -50.0,
+          category: "Renda",
+          description: "salário",
+        },
+        {
+          data: "2023-09-13",
+          situation: "a pagar",
+          value: -100.0,
           category: "Renda",
           description: "salário",
         },
@@ -50,4 +64,8 @@ export const findIndexAccout = function (arrData) {
   // state.currentAccount = state.accounts[accIndex];
   state.currentAccountIndex = accIndex;
   console.log(state.currentAccountIndex);
+};
+
+export const addMovimentToState = function (accIndex, movBlock) {
+  state.accounts[accIndex].moviments.push(movBlock);
 };
