@@ -25,6 +25,7 @@ class AddMovView extends View {
   _btnDescriptionExpense = document.querySelector(
     ".description-form-input-expense"
   );
+  _movimentsValuesArr = [];
 
   handlerAddBtnExpenseFunction(handler) {
     this._btnMovRevenue.addEventListener(
@@ -54,6 +55,62 @@ class AddMovView extends View {
     }
   }
 
+  movimentValidation(
+    dataSelecBtn,
+    dataInputBtn,
+    situationBtn,
+    valueBtn,
+    categoryBtn,
+    descriptionBtn
+  ) {
+    const dataSelec = dataSelecBtn.value;
+    const dataInput = dataInputBtn.value;
+    const situation = situationBtn.textContent;
+    const value = valueBtn.value;
+    const category = categoryBtn.value;
+    const description = descriptionBtn.value;
+    let booleanError = true;
+    // vou ter q receber os proprios botões e colocar textContent etc para conseguir mudar os input para cor vermelha, no caso a borda -> 1px solid #red
+    console.log(dataSelec, dataInput, situation, value, category, description);
+
+    if (dataSelec === "schedule" && dataInput == "") {
+      dataInputBtn.style.border = "1px solid red";
+      console.log("colocar o datainput como vermelho");
+      // return false;
+      booleanError = false;
+    }
+
+    if (value == 0) {
+      valueBtn.style.border = "1px solid red";
+      // return false;
+      booleanError = false;
+    }
+
+    if (description == "") {
+      descriptionBtn.style.border = "1px solid red";
+      booleanError = false;
+    }
+
+    return booleanError;
+  }
+
+  initAddMov(
+    dataSelecBtn,
+    dataInputBtn,
+    situationBtn,
+    valueBtn,
+    categoryBtn,
+    descriptionBtn
+  ) {
+    console.log("---as-");
+
+    const arrValues = [dataInputBtn, valueBtn, descriptionBtn];
+
+    console.log("---as-");
+    arrValues.forEach((el) => (el.value = ""));
+    arrValues.forEach((el) => (el.style.border = "1px solid #333"));
+  }
+
   functionAddBtnExpense(data) {
     const [year, month, day] = this.getDataFormat();
     console.log(day, month, year);
@@ -65,30 +122,76 @@ class AddMovView extends View {
     console.log(this._btnCategorySelect.value);
     console.log(this._btnDescription.value);
 
+    const validationMoviment = this.movimentValidation(
+      this._btnDataSelect,
+      this._btnDataInput,
+      this._btnSituation,
+      this._btnValue,
+      this._btnCategorySelect,
+      this._btnDescription
+    );
+
+    if (!validationMoviment) return;
+
     // insertHTML
 
     const correctValue = this.transformValues(this._btnValue.value);
 
-    const classSituation = this.getSituationClass(
+    const booleanValueData = this._btnDataInput.value
+      ? this.confirmingSituation(this._btnDataInput.value)
+      : false;
+
+    // if (this._btnDataInput.value) console.log("asdassdasd");
+    const correcrtSituation = this.testSituation(
+      booleanValueData,
       this._btnSituation.textContent
     );
+
+    const classSituation = this.getSituationClass(correcrtSituation);
 
     const html = `
       <div class="moviment">
               <p class="mov-data">${day}/${month}/${year}</p>
-              <p class="mav-situation ${classSituation}">${this._btnSituation.textContent}</p>
+              <p class="mav-situation ${classSituation}">${correcrtSituation}</p>
               <p class="mav-value"> R$${correctValue}</p>
-              <p class="mav-category">renda</p>
+              <p class="mav-category">${this._btnCategorySelect.value}</p>
               <p class="mav-description">${this._btnDescription.value}</p>
+              <p>
               <svg class="icon-mov" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"></path>
-              </svg>
+             <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"></path>
+           </svg>
+           </p>
             </div>
     `;
 
     this._movimentsContainer.insertAdjacentHTML("afterbegin", html);
 
     // return blockInfos
+
+    this._movimentsValuesArr.push(+this._btnValue.value);
+    console.log(this._movimentsValuesArr);
+
+    const objMov = {
+      data: `${year}-${month}-${day}`,
+      situation: correcrtSituation,
+      value: this._btnValue.value,
+      category: this._btnCategorySelect.value,
+      description: this._btnDescription.value,
+    };
+    // console.log(objMov);
+
+    this.initAddMov(
+      this._btnDataSelect,
+      this._btnDataInput,
+      this._btnSituation,
+      this._btnValue,
+      this._btnCategorySelect,
+      this._btnDescription
+    );
+
+    console.log(10 + -11);
+
+    return objMov;
   }
 
   showDataInput() {

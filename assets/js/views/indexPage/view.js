@@ -1,8 +1,16 @@
 export default class View {
   transformValues(value) {
-    const strValueMod = `${value}`;
+    const deletedSinalValue = value > 0 ? value : +`${value}`;
+    let strValueMod = `${value}`;
+
+    if (value < 0) {
+      strValueMod = strValueMod.replace("-", "");
+    }
+
     const splitStrValueMod = strValueMod.split(".");
     let strValue = strValueMod;
+
+    console.log("--------", [...strValueMod]);
 
     if (splitStrValueMod.length > 1 && splitStrValueMod[1].length == 1) {
       strValue += "0";
@@ -26,7 +34,7 @@ export default class View {
     // console.log(dayToday, monthToday, yearToday);
     // console.log(dayMov, monthMov, yearMov);
 
-    if (today > data) return true;
+    if (today > data || today == data) return true;
   }
 
   testSituation(booleanValue, situation) {

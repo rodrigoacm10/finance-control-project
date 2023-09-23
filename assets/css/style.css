@@ -58,7 +58,7 @@ body {
   width: 35rem;
   /* width: auto; */
   margin: 0 auto;
-  border: 1px solid #FFCF24;
+  border: 1px solid #ffcf24;
   padding: 9.6rem 4.8rem;
   border-radius: 9px;
 }
@@ -144,7 +144,7 @@ body {
   display: flex;
   align-items: center;
   /* background-color: aquamarine; */
-  background-color: #FFCF24; 
+  background-color: #ffcf24;
   border-radius: 9px;
 }
 
@@ -163,7 +163,7 @@ body {
 }
 
 .values-container-primary {
-  background-color: #FD9B28;
+  background-color: #fd9b28;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -211,8 +211,7 @@ body {
 }
 
 .value-container-secundary {
-  background-color: #FD9B28
-;
+  background-color: #fd9b28;
   display: flex;
   align-items: center;
 }
@@ -230,7 +229,7 @@ body {
 } */
 .perfil-container {
   /* background-color: aqua; */
-  background-color: #FFCF24;
+  background-color: #ffcf24;
   /* border: 1px solid #8b8b8b; */
   padding: 2.4rem;
   border-radius: 9px;
@@ -246,7 +245,7 @@ body {
   /* margin: 2rem; */
   margin-bottom: 2rem;
   border-radius: 11px;
-  background-color: #1E1E1E;
+  background-color: #1e1e1e;
 }
 
 .img {
@@ -259,7 +258,7 @@ body {
 }
 
 .btn-perfil {
-  background-color: #FD9B28;
+  background-color: #fd9b28;
 }
 
 .perfil-name {
@@ -289,7 +288,7 @@ body {
   align-items: center;
   justify-content: center;
   /* text-align: center; */
-  background-color: #1E1E1E;
+  background-color: #1e1e1e;
   padding: 2.4rem 4.8rem;
   border-radius: 9px;
 }
@@ -299,7 +298,7 @@ body {
   align-items: center;
   justify-content: center;
   /* text-align: center; */
-  background-color: #FD9B28;
+  background-color: #fd9b28;
   padding: 2.4rem 4.8rem;
   border-radius: 9px;
   transition: all 0.3s;
@@ -314,17 +313,17 @@ body {
   font-size: 1.6rem;
 }
 
-.select-mov-function-name { /*titulo selecionado*/
+.select-mov-function-name {
+  /*titulo selecionado*/
   font-size: 1.6rem;
   color: white;
 }
-
 
 .add-mov-action {
   margin-top: 2rem;
   padding: 2.4rem;
   border-radius: 9px;
-  background-color: #FFCF24;
+  background-color: #ffcf24;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -419,13 +418,13 @@ body {
 }
 
 .extract-container {
-  background-color: #FFCF24;
+  background-color: #ffcf24;
   border-radius: 9px;
   padding: 2.4rem;
 }
 
 .extract-mov-container {
-  background-color: #FFCF24;
+  background-color: #ffcf24;
   border-radius: 9px;
   margin-top: 2rem;
   padding: 2.4rem;
@@ -435,14 +434,20 @@ body {
 }
 
 .moviment {
-  display: flex;
-  justify-content: space-between;
-  background-color: #FD9B28;
+  /* display: flex;
+  justify-content: space-between; */
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  justify-content: center;
+  background-color: #8b8b8b;
   padding: 1.4rem 2.8rem;
   border-radius: 9px;
 }
 
-.moviment p {
+.moviment p,
+.moviment svg {
+  display: flex;
+  justify-content: center;
   font-size: 1.6rem;
 }
 

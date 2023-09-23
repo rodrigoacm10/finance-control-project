@@ -22,9 +22,10 @@ const controlerAddMovExpense = function () {
   // model.state.currentAccount.moviments.push({ tesas: "a" });
   // model.addMovimentToState(model.state.currentAccountIndex, { test: "ok" });
 
-  AddMovView.functionAddBtnExpense();
+  const movObj = AddMovView.functionAddBtnExpense();
+  model.addMovimentToState(model.state.currentAccountIndex, movObj);
 
-  console.log(model.state.currentAccount);
+  console.log("------", model.state.currentAccount);
 };
 
 const init = function () {
