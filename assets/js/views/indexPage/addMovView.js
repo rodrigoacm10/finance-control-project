@@ -27,32 +27,17 @@ class AddMovView extends View {
   );
   _movimentsValuesArr = [];
 
-  handlerAddBtnExpenseFunction(handler) {
+  handlerAddBtnRevenueFunction(handler) {
     this._btnMovRevenue.addEventListener(
       "click",
       function (e) {
+        console.log("asssdasdadfrgfg");
         e.preventDefault();
         handler();
       }
 
       // this.functionAddBtn.bind(this)
     );
-  }
-
-  getDataFormat() {
-    let day = " ";
-    let month = " ";
-    let year = " ";
-
-    if (this._btnDataSelect.value === "today") {
-      [year, month, day] = new Date().toISOString().split("T")[0].split("-");
-      console.log([year, month, day]);
-      return [year, month, day];
-    } else if (this._btnDataSelect.value === "schedule") {
-      [year, month, day] = this._btnDataInput.value.split("-");
-      console.log([year, month, day]);
-      return [year, month, day];
-    }
   }
 
   movimentValidation(
@@ -111,9 +96,14 @@ class AddMovView extends View {
     arrValues.forEach((el) => (el.style.border = "1px solid #333"));
   }
 
-  functionAddBtnExpense(data) {
-    const [year, month, day] = this.getDataFormat();
+  functionAddBtnRevenue(data) {
+    const [year, month, day] = this.getDataFormat(
+      this._btnDataSelect.value,
+      this._btnDataInput.value
+    );
     console.log(day, month, year);
+
+    const minusPlus = this.sinalExpenseRevenue(this._btnMovRevenue);
 
     console.log(this._btnDataSelect.value);
     console.log(this._btnDataInput.value);
@@ -147,13 +137,18 @@ class AddMovView extends View {
       this._btnSituation.textContent
     );
 
+    const confirmatedValue = this.modfvalue(minusPlus, this._btnValue.value);
+    console.log(confirmatedValue);
+
     const classSituation = this.getSituationClass(correcrtSituation);
 
     const html = `
       <div class="moviment">
               <p class="mov-data">${day}/${month}/${year}</p>
               <p class="mav-situation ${classSituation}">${correcrtSituation}</p>
-              <p class="mav-value"> R$${correctValue}</p>
+              <p class="mav-value">${
+                minusPlus ? "-" : "+"
+              } R$${correctValue}</p>
               <p class="mav-category">${this._btnCategorySelect.value}</p>
               <p class="mav-description">${this._btnDescription.value}</p>
               <p>
@@ -171,10 +166,12 @@ class AddMovView extends View {
     this._movimentsValuesArr.push(+this._btnValue.value);
     console.log(this._movimentsValuesArr);
 
+    console.log(confirmatedValue, typeof confirmatedValue);
+
     const objMov = {
       data: `${year}-${month}-${day}`,
       situation: correcrtSituation,
-      value: this._btnValue.value,
+      value: confirmatedValue,
       category: this._btnCategorySelect.value,
       description: this._btnDescription.value,
     };
@@ -187,6 +184,137 @@ class AddMovView extends View {
       this._btnValue,
       this._btnCategorySelect,
       this._btnDescription
+    );
+
+    return objMov;
+  }
+
+  sinalExpenseRevenue(el) {
+    const booleanValue = el === this._btnMovExpense ? true : false;
+    return booleanValue;
+  }
+
+  modfvalue(booleanValue, value) {
+    let confirmatedValue = value;
+    if (booleanValue) {
+      confirmatedValue = "-" + value;
+      console.log(confirmatedValue);
+
+      confirmatedValue = +confirmatedValue;
+      console.log(confirmatedValue);
+    }
+    console.log(confirmatedValue, typeof confirmatedValue);
+    return +confirmatedValue;
+  }
+
+  handlerAddBtnExpenseFunction(handler) {
+    this._btnMovExpense.addEventListener(
+      "click",
+      function (e) {
+        e.preventDefault();
+        handler();
+      }
+
+      // this.functionAddBtn.bind(this)
+    );
+  }
+
+  functionAddBtnExpense(data) {
+    const [year, month, day] = this.getDataFormat(
+      this._btnDataSelectExpense.value,
+      this._btnDataInputExpense.value
+    );
+
+    const minusPlus = this.sinalExpenseRevenue(this._btnMovExpense);
+
+    console.log(this._btnDataSelectExpense.value);
+    console.log(this._btnDataInputExpense.value);
+    console.log(this._btnSituationExpense.textContent);
+    console.log(this._btnValueExpense.value);
+    console.log(this._btnCategorySelectExpense.value);
+    console.log(this._btnDescriptionExpense.value);
+
+    console.log("--------", this._btnDataSelectExpense);
+
+    const validationMoviment = this.movimentValidation(
+      this._btnDataSelectExpense,
+      this._btnDataInputExpense,
+      this._btnSituationExpense,
+      this._btnValueExpense,
+      this._btnCategorySelectExpense,
+      this._btnDescriptionExpense
+    );
+
+    if (!validationMoviment) return;
+
+    // insertHTML
+
+    const correctValue = this.transformValues(this._btnValueExpense.value);
+
+    const booleanValueData = this._btnDataInputExpense.value
+      ? this.confirmingSituation(this._btnDataInputExpense.value)
+      : false;
+
+    // if (this._btnDataInput.value) console.log("asdassdasd");
+    const correcrtSituation = this.testSituation(
+      booleanValueData,
+      this._btnSituationExpense.textContent
+    );
+
+    const confirmatedValue = this.modfvalue(
+      minusPlus,
+      this._btnValueExpense.value
+    );
+    console.log(confirmatedValue);
+
+    const classSituation = this.getSituationClass(correcrtSituation);
+
+    const html = `
+      <div class="moviment">
+              <p class="mov-data">${day}/${month}/${year}</p>
+              <p class="mav-situation ${classSituation}">${correcrtSituation}</p>
+              <p class="mav-value">${
+                minusPlus ? "-" : "+"
+              } R$${correctValue}</p>
+              <p class="mav-category">${
+                this._btnCategorySelectExpense.value
+              }</p>
+              <p class="mav-description">${
+                this._btnDescriptionExpense.value
+              }</p>
+              <p>
+              <svg class="icon-mov" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+             <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"></path>
+           </svg>
+           </p>
+            </div>
+    `;
+
+    this._movimentsContainer.insertAdjacentHTML("afterbegin", html);
+
+    // return blockInfos
+
+    this._movimentsValuesArr.push(+this._btnValueExpense.value);
+    console.log(this._movimentsValuesArr);
+
+    console.log(confirmatedValue);
+
+    const objMov = {
+      data: `${year}-${month}-${day}`,
+      situation: correcrtSituation,
+      value: confirmatedValue,
+      category: this._btnCategorySelect.value,
+      description: this._btnDescription.value,
+    };
+    // console.log(objMov);
+
+    this.initAddMov(
+      this._btnDataSelectExpense,
+      this._btnDataInputExpense,
+      this._btnSituationExpense,
+      this._btnValueExpense,
+      this._btnCategorySelectExpense,
+      this._btnDescriptionExpense
     );
 
     console.log(10 + -11);
