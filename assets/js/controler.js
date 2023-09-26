@@ -27,6 +27,7 @@ const controlerLoadPage = function () {
 const addMovToArr = function (situation, obj) {
   if (situation === "recebido" || situation === "pago") {
     model.addMovimentRealizedToState(model.state.currentAccountIndex, obj);
+    ValuesRender.attTotalvalue(obj.value);
   }
 
   if (situation === "recebido") {
@@ -41,6 +42,7 @@ const addMovToArr = function (situation, obj) {
   } else if (situation === "a pagar") {
     model.addMovimentToPayToState(model.state.currentAccountIndex, obj);
     console.log("abc");
+    // valuesRender
   }
 };
 
@@ -54,6 +56,7 @@ const controlerAddMovRevenue = function () {
   model.addMovimentToState(model.state.currentAccountIndex, movObj);
 
   addMovToArr(movObj.situation, movObj);
+  // const test =
 
   console.log("------", model.state.currentAccount);
 };
