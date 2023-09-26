@@ -39,6 +39,7 @@ export const state = {
       totalValue: 10.2,
       valueToPay: 412,
       valueToReceive: 0,
+      movimentsRealized: [],
       movimentsRecived: [],
       movimentsPaid: [],
       movimentsToRecive: [],
@@ -68,4 +69,24 @@ export const findIndexAccout = function (arrData) {
 
 export const addMovimentToState = function (accIndex, movBlock) {
   state.accounts[accIndex].moviments.push(movBlock);
+};
+
+export const addMovimentReceivedToState = function (accIndex, movBlock) {
+  state.accounts[accIndex].movimentsRecived.push(movBlock);
+};
+
+export const addMovimentPaidToState = function (accIndex, movBlock) {
+  state.accounts[accIndex].movimentsPaid.push(movBlock);
+};
+
+export const addMovimentToReceiveToState = function (accIndex, movBlock) {
+  state.accounts[accIndex].movimentsToRecive.push(movBlock);
+};
+
+export const addMovimentToPayToState = function (accIndex, movBlock) {
+  state.accounts[accIndex].movimentsToPay.push(movBlock);
+};
+
+export const addMovimentRealizedToState = function (accIndex, movBlock) {
+  state.accounts[accIndex].movimentsRealized.push(movBlock);
 };

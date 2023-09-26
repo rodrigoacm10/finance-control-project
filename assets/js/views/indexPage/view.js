@@ -26,6 +26,22 @@ export default class View {
     return strValue;
   }
 
+  getDataFormat(dataSelect, dataInput) {
+    let day = " ";
+    let month = " ";
+    let year = " ";
+
+    if (dataSelect === "today") {
+      [year, month, day] = new Date().toISOString().split("T")[0].split("-");
+      console.log([year, month, day]);
+      return [year, month, day];
+    } else if (dataSelect === "schedule") {
+      [year, month, day] = dataInput.split("-");
+      console.log([year, month, day]);
+      return [year, month, day];
+    }
+  }
+
   confirmingSituation(data) {
     const today = new Date().toISOString().split("T")[0];
     const [yearToday, monthToday, dayToday] = today.split("-");
