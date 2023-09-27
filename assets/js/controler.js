@@ -27,6 +27,11 @@ const controlerLoadPage = function () {
 const addMovToArr = function (situation, obj) {
   if (situation === "recebido" || situation === "pago") {
     model.addMovimentRealizedToState(model.state.currentAccountIndex, obj);
+    console.log(model.state.currentAccount);
+    model.state.currentAccount.totalValue = ValuesRender.attTotalvalue(
+      obj.value
+    );
+    console.log(model.currentAccount);
   }
 
   if (situation === "recebido") {
@@ -38,9 +43,16 @@ const addMovToArr = function (situation, obj) {
   } else if (situation === "a receber") {
     model.addMovimentToReceiveToState(model.state.currentAccountIndex, obj);
     console.log("ab");
+    model.state.currentAccount.valueToReceive = ValuesRender.attToReceiveValue(
+      obj.value
+    );
   } else if (situation === "a pagar") {
     model.addMovimentToPayToState(model.state.currentAccountIndex, obj);
     console.log("abc");
+    model.state.currentAccount.valueToPay = ValuesRender.attToPayValue(
+      obj.value
+    );
+    // valuesRender
   }
 };
 
@@ -54,6 +66,7 @@ const controlerAddMovRevenue = function () {
   model.addMovimentToState(model.state.currentAccountIndex, movObj);
 
   addMovToArr(movObj.situation, movObj);
+  // const test =
 
   console.log("------", model.state.currentAccount);
 };
