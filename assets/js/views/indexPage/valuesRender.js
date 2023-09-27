@@ -13,8 +13,6 @@ class ValuesRender extends View {
     let strValue = +valueStr.split(" ")[1].replace(",", ".");
     console.log(strValue, typeof strValue);
 
-    // if (strValue.findIndex(el =>)("-"))
-    // strValue = this.transformValues(strValue).replace(",", ".");
     return strValue;
   }
 
@@ -25,32 +23,32 @@ class ValuesRender extends View {
   }
 
   attTotalvalue(receivedValue) {
-    console.log("ayz");
     let curTotalValue = this.getValue(this._totalValue.textContent);
-    console.log(curTotalValue);
     curTotalValue += receivedValue;
-    console.log(curTotalValue);
     const correctFormValue = this.transformValues(curTotalValue);
-    this._totalValue.textContent = `R$ ${correctFormValue}`;
-    //   curTotalValue > 0 ? `+ R$${curTotalValue}` : `- R$${curTotalValue}`;
+    this._totalValue.textContent =
+      curTotalValue > 0 ? `R$ ${correctFormValue}` : `R$ -${correctFormValue}`;
 
     return curTotalValue;
   }
 
   attToPayValue(receivedValue) {
-    console.log("ayz");
     let curTotalValue = this.getValue(this._toPayValue.textContent);
-    console.log(curTotalValue);
-    curTotalValue += receivedValue;
-    console.log(curTotalValue);
+    curTotalValue += Math.abs(receivedValue);
     const correctFormValue = this.transformValues(curTotalValue);
     this._toPayValue.textContent = `R$ ${correctFormValue}`;
-    //   curTotalValue > 0 ? `+ R$${curTotalValue}` : `- R$${curTotalValue}`;
 
     return curTotalValue;
   }
 
-  attToReceiveValue() {}
+  attToReceiveValue(receivedValue) {
+    let curTotalValue = this.getValue(this._toReceiveValue.textContent);
+    curTotalValue += Math.abs(receivedValue);
+    const correctFormValue = this.transformValues(curTotalValue);
+    this._toReceiveValue.textContent = `R$ ${correctFormValue}`;
+
+    return curTotalValue;
+  }
 }
 
 export default new ValuesRender();

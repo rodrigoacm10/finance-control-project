@@ -458,4 +458,9 @@ body {
   height: 2.4rem;
   padding: 0.4rem;
   background-color: #5c5c5c;
+  transition: all 0.3s;
+}
+
+.icon-mov:hover {
+  background-color: #1e1e1e;
 }

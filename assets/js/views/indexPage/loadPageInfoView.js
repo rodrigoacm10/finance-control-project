@@ -22,7 +22,8 @@ class LoadPageInfoView extends View {
   addMoviments(data) {
     const moviments = data.moviments;
     console.log(moviments);
-    moviments.map((el) => {
+    // return moviments.map((el) => {
+    return moviments.map((el) => {
       // const type = mov > 0 ? "deposit" : "withdrawal";
 
       // data: "2023-09-13",
@@ -32,16 +33,27 @@ class LoadPageInfoView extends View {
       //     description: "salário",
 
       //  VAI RETORNAR TRUE OU FALSO, SE FOR FALSO VAMOS USAR UM IF(!), QUE IRA MODIFICAR O CONFIRMEDsITUATION PARA TIRAR O A DA PALAVRA -> EL.SITUATION = CONFIRMEDSITUATION('A PAGAR').SPLIT(' ')[1] -> FICANDO PAGAR
-      const booleanSituation = this.confirmingSituation(el.data);
+      // const booleanSituation = this.confirmingSituation(el.data);
 
-      const confirmSituation = this.testSituation(
-        booleanSituation,
+      // const confirmSituation = this.testSituation(
+      //   booleanSituation,
+      //   el.situation
+      // );
+
+      // el.situation = confirmSituation;
+
+      // const situation = this.getSituationClass(el.situation);
+
+      const booleanValueData = el.data
+        ? this.confirmingSituation(el.data)
+        : false;
+
+      const correcrtSituation = this.testSituation(
+        booleanValueData,
         el.situation
       );
 
-      el.situation = confirmSituation;
-
-      const situation = this.getSituationClass(el.situation);
+      const classSituation = this.getSituationClass(correcrtSituation);
 
       const sinal = el.value > 0 ? "+" : "-";
 
@@ -52,9 +64,9 @@ class LoadPageInfoView extends View {
       const html = `
       <div class="moviment">
               <p class="mov-data">${day}/${month}/${year}</p>
-              <p class="mav-situation ${situation}">${el.situation}</p>
+              <p class="mav-situation ${classSituation}">${correcrtSituation}</p>
               <p class="mav-value">${sinal} R$${formatedValue}</p>
-              <p class="mav-category">renda</p>
+              <p class="mav-category">${el.category}</p>
               <p class="mav-description">${el.description}</p>
               <p>
               <svg class="icon-mov" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -65,6 +77,16 @@ class LoadPageInfoView extends View {
     `;
 
       this._movimentsContainer.insertAdjacentHTML("afterbegin", html);
+
+      // const objMov = {
+      //   data: `${year}-${month}-${day}`,
+      //   situation: correcrtSituation,
+      //   value: el.value,
+      //   category: el.category,
+      //   description: el.description,
+      // };
+
+      // return objMov;
     });
   }
 
