@@ -6,6 +6,7 @@ import ShowCorrectFunc from "./views/indexPage/showCorrectFunc.js";
 import addMovView from "./views/indexPage/addMovView.js";
 import ValuesRender from "./views/indexPage/valuesRender.js";
 import valuesRender from "./views/indexPage/valuesRender.js";
+import RemoveMov from "./views/indexPage/removeMov.js";
 
 const controlerLoadPage = function () {
   model.state.currentAccountIndex = LoadPageInfoView.getAccIndex();
@@ -16,6 +17,8 @@ const controlerLoadPage = function () {
   console.log(account);
   LoadPageInfoView.addInformations(account);
   LoadPageInfoView.addMoviments(account);
+
+  RemoveMov.addHandlerRomveMov(controlRemoveMov);
 };
 
 // Toda vez que se apertar no botao de addum movimento vai ser retornado undefined
@@ -69,6 +72,8 @@ const controlerAddMovRevenue = function () {
   // const test =
 
   console.log("------", model.state.currentAccount);
+
+  RemoveMov.addHandlerRomveMov(controlRemoveMov);
 };
 
 const controlerAddMovExpense = function () {
@@ -83,6 +88,64 @@ const controlerAddMovExpense = function () {
   addMovToArr(movObj.situation, movObj);
 
   console.log("------", model.state.currentAccount);
+
+  RemoveMov.addHandlerRomveMov(controlRemoveMov);
+};
+
+const controlRemoveMov = function (movElement) {
+  const idControl = RemoveMov.removingMov(movElement);
+
+  const indexMovGeral = model.state.currentAccount.moviments.findIndex(
+    (el) => el.id == idControl
+  );
+
+  const movimentsRealized =
+    model.state.currentAccount.movimentsRealized.findIndex(
+      (el) => el.id == idControl
+    );
+
+  const indexMovPaid = model.state.currentAccount.movimentsPaid.findIndex(
+    (el) => el.id == idControl
+  );
+
+  const indexMovReceived =
+    model.state.currentAccount.movimentsRecived.findIndex(
+      (el) => el.id == idControl
+    );
+
+  const indexMovToPay = model.state.currentAccount.movimentsToPay.findIndex(
+    (el) => el.id == idControl
+  );
+
+  const indexMovToReceive =
+    model.state.currentAccount.movimentsToRecive.findIndex(
+      (el) => el.id == idControl
+    );
+
+  console.log(indexMovGeral);
+  console.log(movimentsRealized);
+  console.log(indexMovPaid);
+  console.log(indexMovReceived);
+  console.log(indexMovToPay);
+  console.log(indexMovToReceive);
+  model.removingMovGeral(model.state.currentAccountIndex, indexMovGeral);
+
+  model.removingMovRealized(model.state.currentAccountIndex, movimentsRealized);
+
+  model.removingMovPaid(model.state.currentAccountIndex, indexMovPaid);
+
+  model.removingMovReceived(model.state.currentAccountIndex, indexMovReceived);
+
+  model.removingMovToPay(model.state.currentAccountIndex, indexMovToPay);
+
+  model.removingMovToReceive(
+    model.state.currentAccountIndex,
+    indexMovToReceive
+  );
+
+  console.log(model.state.currentAccount);
+  RemoveMov.clearAllContainer();
+  controlerLoadPage();
 };
 
 const init = function () {

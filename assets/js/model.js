@@ -6,6 +6,7 @@ export const state = {
       password: 123,
       moviments: [
         {
+          id: 4249928092023,
           data: "2023-09-13",
           situation: "recebido",
           value: 100.0,
@@ -13,6 +14,7 @@ export const state = {
           description: "salário",
         },
         {
+          id: 3249928092023,
           data: "2023-09-25",
           situation: "a receber",
           value: 100.0,
@@ -20,6 +22,7 @@ export const state = {
           description: "salário",
         },
         {
+          id: 2249928092023,
           data: "2023-09-13",
           situation: "pago",
           value: -50.0,
@@ -27,6 +30,7 @@ export const state = {
           description: "salário",
         },
         {
+          id: 1249928092023,
           data: "2023-09-13",
           situation: "a pagar",
           value: -100.0,
@@ -50,6 +54,7 @@ export const state = {
       password: 1234,
       moviments: [
         {
+          id: 4149928092023,
           data: "2024-09-13",
           situation: "recebido",
           value: 99.0,
@@ -57,6 +62,7 @@ export const state = {
           description: "salário",
         },
         {
+          id: 4049928092023,
           data: "2023-09-25",
           situation: "a receber",
           value: 10.0,
@@ -64,6 +70,7 @@ export const state = {
           description: "salário",
         },
         {
+          id: 4219928092023,
           data: "2024-09-13",
           situation: "a pagar",
           value: -55.0,
@@ -71,6 +78,7 @@ export const state = {
           description: "salário",
         },
         {
+          id: 4229928092023,
           data: "2023-09-13",
           situation: "a pagar",
           value: -99.0,
@@ -132,4 +140,52 @@ export const addMovimentToPayToState = function (accIndex, movBlock) {
 
 export const addMovimentRealizedToState = function (accIndex, movBlock) {
   state.accounts[accIndex].movimentsRealized.push(movBlock);
+};
+
+export const removingMovGeral = function (accIndex, movIndex) {
+  if (movIndex > -1) {
+    const valueMov = state.accounts[accIndex].moviments[movIndex].value;
+    state.accounts[accIndex].moviments.splice(movIndex, 1);
+    // return valueMov;
+  }
+};
+
+export const removingMovRealized = function (accIndex, movIndex) {
+  if (movIndex > -1) {
+    const valueMov = state.accounts[accIndex].movimentsRealized[movIndex].value;
+    state.accounts[accIndex].movimentsRealized.splice(movIndex, 1);
+    return valueMov;
+  } else return false;
+};
+
+export const removingMovPaid = function (accIndex, movIndex) {
+  if (movIndex > -1) {
+    const valueMov = state.accounts[accIndex].movimentsPaid[movIndex].value;
+    state.accounts[accIndex].movimentsPaid.splice(movIndex, 1);
+    return valueMov;
+  } else return false;
+};
+
+export const removingMovReceived = function (accIndex, movIndex) {
+  if (movIndex > -1) {
+    const valueMov = state.accounts[accIndex].movimentsRecived[movIndex].value;
+    state.accounts[accIndex].movimentsRecived.splice(movIndex, 1);
+    return valueMov;
+  } else return false;
+};
+
+export const removingMovToPay = function (accIndex, movIndex) {
+  if (movIndex > -1) {
+    const valueMov = state.accounts[accIndex].movimentsToPay[movIndex].value;
+    state.accounts[accIndex].movimentsToPay.splice(movIndex, 1);
+    return valueMov;
+  } else return false;
+};
+
+export const removingMovToReceive = function (accIndex, movIndex) {
+  if (movIndex > -1) {
+    const valueMov = state.accounts[accIndex].movimentsToRecive[movIndex].value;
+    state.accounts[accIndex].movimentsToRecive.splice(movIndex, 1);
+    return valueMov;
+  } else return false;
 };
