@@ -101,6 +101,15 @@ class AddMovView extends View {
       this._btnDataSelect.value,
       this._btnDataInput.value
     );
+
+    const dataVariable = new Date();
+    const seconds = dataVariable.getSeconds();
+    const minutes = dataVariable.getMinutes();
+    const hours = dataVariable.getHours();
+
+    const idSimulation = +`${seconds}${minutes}${hours}${day}${month}${year}`;
+    console.log(idSimulation, typeof idSimulation);
+
     console.log(day, month, year);
 
     const minusPlus = this.sinalExpenseRevenue(this._btnMovRevenue);
@@ -143,7 +152,7 @@ class AddMovView extends View {
     const classSituation = this.getSituationClass(correcrtSituation);
 
     const html = `
-      <div class="moviment">
+      <div class="moviment" data-id="${idSimulation}">
               <p class="mov-data">${day}/${month}/${year}</p>
               <p class="mav-situation ${classSituation}">${correcrtSituation}</p>
               <p class="mav-value">${
@@ -169,6 +178,7 @@ class AddMovView extends View {
     console.log(confirmatedValue, typeof confirmatedValue);
 
     const objMov = {
+      id: idSimulation,
       data: `${year}-${month}-${day}`,
       situation: correcrtSituation,
       value: confirmatedValue,
@@ -225,6 +235,14 @@ class AddMovView extends View {
       this._btnDataInputExpense.value
     );
 
+    const dataVariable = new Date();
+    const seconds = dataVariable.getSeconds();
+    const minutes = dataVariable.getMinutes();
+    const hours = dataVariable.getHours();
+
+    const idSimulation = +`${seconds}${minutes}${hours}${day}${month}${year}`;
+    console.log(idSimulation, typeof idSimulation);
+
     const minusPlus = this.sinalExpenseRevenue(this._btnMovExpense);
 
     console.log(this._btnDataSelectExpense.value);
@@ -270,7 +288,7 @@ class AddMovView extends View {
     const classSituation = this.getSituationClass(correcrtSituation);
 
     const html = `
-      <div class="moviment">
+      <div class="moviment" data-id="${idSimulation}">
               <p class="mov-data">${day}/${month}/${year}</p>
               <p class="mav-situation ${classSituation}">${correcrtSituation}</p>
               <p class="mav-value">${
@@ -300,6 +318,7 @@ class AddMovView extends View {
     console.log(confirmatedValue);
 
     const objMov = {
+      id: idSimulation,
       data: `${year}-${month}-${day}`,
       situation: correcrtSituation,
       value: confirmatedValue,

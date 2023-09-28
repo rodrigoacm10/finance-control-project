@@ -62,7 +62,7 @@ class LoadPageInfoView extends View {
       const formatedValue = this.transformValues(el.value);
 
       const html = `
-      <div class="moviment">
+      <div class="moviment" data-id="${el.id}">
               <p class="mov-data">${day}/${month}/${year}</p>
               <p class="mav-situation ${classSituation}">${correcrtSituation}</p>
               <p class="mav-value">${sinal} R$${formatedValue}</p>
