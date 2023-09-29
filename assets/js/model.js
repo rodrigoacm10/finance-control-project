@@ -146,7 +146,7 @@ export const removingMovGeral = function (accIndex, movIndex) {
   if (movIndex > -1) {
     const valueMov = state.accounts[accIndex].moviments[movIndex].value;
     state.accounts[accIndex].moviments.splice(movIndex, 1);
-    // return valueMov;
+    return valueMov;
   }
 };
 
@@ -188,4 +188,19 @@ export const removingMovToReceive = function (accIndex, movIndex) {
     state.accounts[accIndex].movimentsToRecive.splice(movIndex, 1);
     return valueMov;
   } else return false;
+};
+
+export const throwTotalValue = function (accIndex, valueReceived) {
+  state.accounts[accIndex].totalValue += -valueReceived;
+  console.log(state.accounts[accIndex]);
+};
+
+export const throwToPayValue = function (accIndex, valueReceived) {
+  state.accounts[accIndex].valueToPay += -valueReceived;
+  console.log(state.accounts[accIndex]);
+};
+
+export const throwToReceiveValue = function (accIndex, valueReceived) {
+  state.accounts[accIndex].valueToReceive += -valueReceived;
+  console.log(state.accounts[accIndex]);
 };

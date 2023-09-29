@@ -423,14 +423,51 @@ body {
   padding: 2.4rem;
 }
 
-.extract-mov-container {
+.extract-mov-container,
+.extract-mov-filter {
   background-color: #c5c5c5;
   border-radius: 9px;
   margin-top: 2rem;
   padding: 2.4rem;
+}
+
+.extract-mov-container {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+}
+
+.extract-mov-filter {
+  /* display: grid; */
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  display: flex;
+  gap: 2.4rem;
+  align-items: center;
+  /* flex-direction: ; */
+}
+
+.filter-title {
+  font-size: 1.8rem;
+}
+
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.filter-label {
+  font-size: 1.6rem;
+  /* margin-bottom: 1.2rem; */
+}
+
+.filter-select {
+  margin-top: 1rem;
+  border-radius: 9px;
+  border: 1px solid #8b8b8b;
+  padding: 0.6rem 1.2rem;
+  font-size: 1.6rem;
 }
 
 .moviment {

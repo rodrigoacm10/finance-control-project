@@ -92,6 +92,25 @@ const controlerAddMovExpense = function () {
   RemoveMov.addHandlerRomveMov(controlRemoveMov);
 };
 
+const thorowBackMoney = function (
+  geral,
+  realized,
+  paid,
+  received,
+  toPay,
+  toReceive
+) {
+  console.log(geral, realized, paid, received, toPay, toReceive);
+
+  if (realized) {
+    model.throwTotalValue(model.state.currentAccountIndex, realized);
+  } else if (toPay) {
+    model.throwToPayValue(model.state.currentAccountIndex, toPay);
+  } else if (toReceive) {
+    model.throwToReceiveValue(model.state.currentAccountIndex, toReceive);
+  }
+};
+
 const controlRemoveMov = function (movElement) {
   const idControl = RemoveMov.removingMov(movElement);
 
@@ -128,20 +147,39 @@ const controlRemoveMov = function (movElement) {
   console.log(indexMovReceived);
   console.log(indexMovToPay);
   console.log(indexMovToReceive);
-  model.removingMovGeral(model.state.currentAccountIndex, indexMovGeral);
+  const test1 = model.removingMovGeral(
+    model.state.currentAccountIndex,
+    indexMovGeral
+  );
 
-  model.removingMovRealized(model.state.currentAccountIndex, movimentsRealized);
+  const test2 = model.removingMovRealized(
+    model.state.currentAccountIndex,
+    movimentsRealized
+  );
 
-  model.removingMovPaid(model.state.currentAccountIndex, indexMovPaid);
+  const test3 = model.removingMovPaid(
+    model.state.currentAccountIndex,
+    indexMovPaid
+  );
 
-  model.removingMovReceived(model.state.currentAccountIndex, indexMovReceived);
+  const test4 = model.removingMovReceived(
+    model.state.currentAccountIndex,
+    indexMovReceived
+  );
 
-  model.removingMovToPay(model.state.currentAccountIndex, indexMovToPay);
+  const test5 = model.removingMovToPay(
+    model.state.currentAccountIndex,
+    indexMovToPay
+  );
 
-  model.removingMovToReceive(
+  const test6 = model.removingMovToReceive(
     model.state.currentAccountIndex,
     indexMovToReceive
   );
+
+  thorowBackMoney(test1, test2, test3, test4, test5, test6);
+
+  console.log(test1, test2, test3, test4, test5, test6);
 
   console.log(model.state.currentAccount);
   RemoveMov.clearAllContainer();

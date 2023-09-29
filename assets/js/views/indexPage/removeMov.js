@@ -28,6 +28,8 @@ class RemoveMov {
   removingMov(data) {
     const id = data.dataset.id;
 
+    // console.log(-(-100));
+
     console.log("td certo!");
     console.log(data);
     console.log("--------------", id);
