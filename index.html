@@ -213,29 +213,42 @@
             <div class="extract-mov-filter  ">
               <p class="filter-title">Filtros: </p>
               <div class="filter-container">
-                <p class="filter-label">data</p>
-                <select name="" id="" class="filter-select">
-                  <option value="renda">Renda</option>
-              <option value="transporte">Transporte</option>
-              <option value="alimentação">Alimentação</option>
+                <label class="filter-label">sequência</label>
+                <select name="" id="" class="filter-select filter-sequence">
+                  <option value="realization">Realização</option>
+                  <option value="recents">Recentes</option>
+                  <option value="oldest">Antigos</option>
+                </select>
+              </div>
+
+              <div class="filter-container">
+                <label class="filter-label">data</label>
+                <select name="" id="" class="filter-select filter-data">
+                  <option value="all">todas</option>
+                  <option value="week">essa semana</option>
+                  <option value="month">esse mês</option>
+                  <option value="year">esse ano</option>
                 </select>
               </div>
 
               <div class="filter-container">
                 <p class="filter-label">situação</p>
-                <select name="" id="" class="filter-select">
-                  <option value="renda">Renda</option>
-              <option value="transporte">Transporte</option>
-              <option value="alimentação">Alimentação</option>
+                <select name="" id="" class="filter-select filter-situation">
+                  <option value="all">todas</option>
+                  <option value="recebido">recebido</option>
+                  <option value="pago">pago</option>
+                  <option value="a receber">a receber</option>
+                  <option value="a pagar">a pagar</option>
                 </select>
               </div>
 
               <div class="filter-container">
                 <p class="filter-label">categoria</p>
-                <select name="" id="" class="filter-select">
+                <select name="" id="" class="filter-select filter-category">
+                  <option value="all">todas</option>
                   <option value="renda">Renda</option>
-              <option value="transporte">Transporte</option>
-              <option value="alimentação">Alimentação</option>
+                  <option value="transporte">Transporte</option>
+                  <option value="alimentação">Alimentação</option>
                 </select>
               </div>
            

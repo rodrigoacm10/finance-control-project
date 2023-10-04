@@ -10,7 +10,7 @@ export const state = {
           data: "2023-09-13",
           situation: "recebido",
           value: 100.0,
-          category: "Renda",
+          category: "renda",
           description: "salário",
         },
         {
@@ -18,7 +18,7 @@ export const state = {
           data: "2023-09-25",
           situation: "a receber",
           value: 100.0,
-          category: "Renda",
+          category: "renda",
           description: "salário",
         },
         {
@@ -26,7 +26,7 @@ export const state = {
           data: "2023-09-13",
           situation: "pago",
           value: -50.0,
-          category: "Renda",
+          category: "renda",
           description: "salário",
         },
         {
@@ -34,7 +34,15 @@ export const state = {
           data: "2023-09-13",
           situation: "a pagar",
           value: -100.0,
-          category: "Renda",
+          category: "renda",
+          description: "salário",
+        },
+        {
+          id: 4229928092023,
+          data: "2023-09-30",
+          situation: "a pagar",
+          value: -99.0,
+          category: "renda",
           description: "salário",
         },
       ],
@@ -58,7 +66,7 @@ export const state = {
           data: "2024-09-13",
           situation: "recebido",
           value: 99.0,
-          category: "Renda",
+          category: "renda",
           description: "salário",
         },
         {
@@ -66,7 +74,7 @@ export const state = {
           data: "2023-09-25",
           situation: "a receber",
           value: 10.0,
-          category: "Renda",
+          category: "renda",
           description: "salário",
         },
         {
@@ -74,7 +82,7 @@ export const state = {
           data: "2024-09-13",
           situation: "a pagar",
           value: -55.0,
-          category: "Renda",
+          category: "renda",
           description: "salário",
         },
         {
@@ -82,7 +90,7 @@ export const state = {
           data: "2023-09-13",
           situation: "a pagar",
           value: -99.0,
-          category: "Renda",
+          category: "renda",
           description: "salário",
         },
       ],
@@ -196,7 +204,7 @@ export const throwTotalValue = function (accIndex, valueReceived) {
 };
 
 export const throwToPayValue = function (accIndex, valueReceived) {
-  state.accounts[accIndex].valueToPay += -valueReceived;
+  state.accounts[accIndex].valueToPay += valueReceived;
   console.log(state.accounts[accIndex]);
 };
 
