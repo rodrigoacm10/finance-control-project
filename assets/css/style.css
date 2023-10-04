@@ -12,6 +12,7 @@ html {
 }
 
 body {
+  transition: all 0.5s;
   font-family: "Outfit", sans-serif;
 }
 
@@ -500,4 +501,111 @@ body {
 
 .icon-mov:hover {
   background-color: #1e1e1e;
+}
+
+/* 
+  CONFIRM BUTTONS
+*/
+
+.hidden-confirm {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.overlay {
+  /* content: ""; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background-color: #1e1e1e; */
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  /* opacity: 1; */
+  z-index: 100;
+  transition: all 0.5s;
+}
+
+.modal {
+  transition: all 0.5s;
+  padding: 3.8rem 5.2rem;
+  border-radius: 9px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #8b8b8b;
+  z-index: 101;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  /* gap: 2.4rem; */
+}
+
+.btn--close-modal {
+  font-family: inherit;
+  /* display: inline-block; */
+  color: inherit;
+  position: absolute;
+  top: -0.4rem;
+  right: 1.4rem;
+  font-size: 4.8rem;
+  cursor: pointer;
+  border: none;
+  background: none;
+  margin: 0;
+  padding: 0;
+}
+
+.btn--close-modal:hover {
+  color: #636363;
+}
+
+.modal-title {
+  font-size: 6.4rem;
+}
+
+.modal-content {
+  margin-top: 1.8rem;
+  text-align: center;
+  width: 75%;
+  font-size: 2.4rem;
+  opacity: 50%;
+}
+
+.modal-container-btns {
+  width: 100%;
+  margin-top: 6.4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.btn-modal {
+  /* display: block; */
+  width: 100%;
+  border: none;
+  border-radius: 9px;
+  padding: 1.2rem 2.4rem;
+}
+
+.btn-modal-confirm {
+  background-color: #c5c5c5;
+}
+
+.btn-modal:hover {
+  background-color: #5c5c5c;
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.65);
+}
+
+/* achar o lugar certo no css dps #8b8b8b  */
+.btn-add-category {
+  background-color: #8b8b8b;
+  transition: all 0.3s;
+}
+
+.btn-add-category:hover {
+  background-color: #636363;
 }

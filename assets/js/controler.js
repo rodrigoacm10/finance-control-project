@@ -8,6 +8,15 @@ import ValuesRender from "./views/indexPage/valuesRender.js";
 import valuesRender from "./views/indexPage/valuesRender.js";
 import RemoveMov from "./views/indexPage/removeMov.js";
 import FillMovs from "./views/indexPage/fillMovs.js";
+import GetOutView from "./views/indexPage/getOutView.js";
+
+const controlerGetOutAcc = function () {
+  GetOutView.removeMovsContainer();
+
+  GetOutView.toggleBody();
+
+  setTimeout(() => GetOutView.moveToInitPage(), 500);
+};
 
 const controlerLoadPage = function () {
   model.state.currentAccountIndex = LoadPageInfoView.getAccIndex();
@@ -192,6 +201,7 @@ const controlFilters = function () {
 };
 
 const init = function () {
+  GetOutView.addHandlerBtnsModel();
   AddMovView.showDataInput();
   addMovView.showDataInputExpense();
   // AddMovView.addBtnExpenseFunction();
@@ -206,5 +216,6 @@ const init = function () {
   AddMovView.handlerAddBtnRevenueFunction(controlerAddMovRevenue);
   AddMovView.handlerAddBtnExpenseFunction(controlerAddMovExpense);
   valuesRender.consoleValues();
+  GetOutView.addHandlerGetOutAcc(controlerGetOutAcc);
 };
 init();
