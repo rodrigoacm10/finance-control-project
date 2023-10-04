@@ -7,6 +7,7 @@ import addMovView from "./views/indexPage/addMovView.js";
 import ValuesRender from "./views/indexPage/valuesRender.js";
 import valuesRender from "./views/indexPage/valuesRender.js";
 import RemoveMov from "./views/indexPage/removeMov.js";
+import FillMovs from "./views/indexPage/fillMovs.js";
 
 const controlerLoadPage = function () {
   model.state.currentAccountIndex = LoadPageInfoView.getAccIndex();
@@ -186,11 +187,17 @@ const controlRemoveMov = function (movElement) {
   controlerLoadPage();
 };
 
+const controlFilters = function () {
+  FillMovs.fillFunction(model.state.currentAccount.moviments);
+};
+
 const init = function () {
   AddMovView.showDataInput();
   addMovView.showDataInputExpense();
   // AddMovView.addBtnExpenseFunction();
   // console.log(model.state.currentAccount);
+  // FillMovs.test();
+  FillMovs.addHandlerInputs(controlFilters);
   console.log(model.state);
   LoadPageInfoView.addHandlerLoadPage(controlerLoadPage);
   toggleEye.addEventListenerEyeBtn();
