@@ -143,7 +143,7 @@
               <option value="transporte">Transporte</option>
               <option value="alimentação">Alimentação</option>
             </select>
-            <button class="form">Add Categoria</button>
+            <button class="form btn-add-category">Add Categoria</button>
             </div>
           
   
@@ -265,5 +265,15 @@
     </main>
 
     <footer></footer>
+    <div class="modal hidden-confirm">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal-title">Tem certeza?</h2>
+      <p class="modal-content">Tem certeza que deseja sair da conta?</p>
+      <div class="modal-container-btns">
+        <button class="btn-modal">não</button>
+        <button class="btn-modal btn-modal-confirm">sim</button>
+      </div>
+    </div>
+    <div class="overlay hidden-confirm"></div>
   </body>
 </html>
