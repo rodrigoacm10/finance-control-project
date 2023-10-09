@@ -1,0 +1,11 @@
+{
+  "name": "control-finance",
+  "version": "1.0.0",
+  "description": "finance organization",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rodrigo Andrade",
+  "license": "ISC"
+}

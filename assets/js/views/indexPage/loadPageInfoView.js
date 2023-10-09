@@ -3,6 +3,8 @@ import View from "./view.js";
 class LoadPageInfoView extends View {
   _userName = document.querySelector(".perfil-name");
   _userImage = document.querySelector(".img-login-icon");
+  _userNameMobile = document.querySelector(".perfil-name-mobile");
+  _userImageMobile = document.querySelector(".img-login-icon-mobile");
   _totalValue = document.querySelector(".total-value");
   _toPayValue = document.querySelector(".to-pay-value");
   _toReceiveValue = document.querySelector(".to-receive-value");
@@ -115,9 +117,20 @@ class LoadPageInfoView extends View {
 
     this._userName.textContent = data.username;
     this._userImage.src = data.userImage;
+    this._userNameMobile.textContent = data.username;
+    this._userImageMobile.src = data.userImage;
     this._totalValue.textContent = totalValueContent.join(" ");
     this._toPayValue.textContent = toPayValueContent.join(" ");
     this._toReceiveValue.textContent = toReceiveValueContent.join(" ");
+  }
+
+  // vai pegar esses dois arrays, percorrer, e quando o resultado for falso, vou pegar o array dentro do forEach(o terceiro parametro) e vou uar splice(indexDoMov, 1) e vou dar push em um arr só cm os movimentos que foram removidos e dps retornar esses arrays, e no controller fzr um loop neles e dar push em cada um nos seus devidos arrays
+  verifingMovsArr(arrToPay, arrToReceive) {
+    console.log(arrToPay, arrToReceive);
+    const arrPaided = [];
+    const arrReceived = [];
+    arrToPay.forEach((el) => el);
+    arrToReceive.forEach((el) => el);
   }
 
   addHandlerLoadPage(handler) {
