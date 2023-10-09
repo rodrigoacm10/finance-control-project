@@ -20,6 +20,34 @@
       <div class="only-logo-nav">
         <p>logo</p>
       </div>
+
+      <nav class="main-nav">
+        <ul class="main-nav-list">
+          <li>
+            <div class="img-container-mobile">
+              <div class="">
+                <img class="img-login-icon-mobile" src="assets/img/dave.jpg" alt="perfil image">
+              </div>
+              <p class="perfil-name-mobile">sla</p>
+            </div>
+          </li>
+          <li><button  class="main-nav-link btn btn-perfil hover">sair</button></li>
+        </ul>
+      </nav>
+
+      <div class="btns-container-mobile">
+      <button class="btn-mobile-nav close-btn">
+        <ion-icon class="icon-mobile-nav close-outline" name="close-outline"></ion-icon>
+      </button>
+
+      <button class="btn-mobile-nav">
+        <ion-icon class="icon-mobile-nav menu-outline" name="menu-outline"></ion-icon>
+      
+      </button>
+      </div>
+     
+
+
     </header>
 
     <main>
@@ -137,7 +165,7 @@
 
           <div class="category-form form-div">
             <p class="form-label">Categoria</p>
-            <div>
+            <div class="form-div-2">
                 <select class="select-category select-category-revenue form" name="" id="select-category">
               <option value="renda">Renda</option>
               <option value="transporte">Transporte</option>
@@ -154,7 +182,7 @@
             <input id="description-form-input" type="text" class="description-form-input description-form-input-revenue form" placeholder="Ex: Uber"></input>
           </div>
 
-          <button class="btn-add-mov btn-add-mov-revenue hover">concluir &rarr;</button>
+          <button class="btn-add-mov btn-add-mov-revenue hover form-div-3">concluir &rarr;</button>
         </div>
 
 
@@ -184,13 +212,13 @@
 
           <div class="category-form form-div">
             <p class="form-label">Categoria</p>
-            <div>
+            <div class="form-div-2">
                 <select class="form select-category select-category-expense" name="" id="select-category">
               <option value="renda">Renda</option>
               <option value="transporte">Transporte</option>
               <option value="alimentação">Alimentação</option>
             </select>
-            <button class="form">Add Categoria</button>
+            <button class="form  btn-add-category">Add Categoria</button>
             </div>
           
   
@@ -201,7 +229,7 @@
             <input id="description-form-input" type="text" class="form description-form-input description-form-input-expense" placeholder="Ex: Uber"></input>
           </div>
 
-          <button class="btn-add-mov btn-add-mov-expense hover">concluir &rarr;</button>
+          <button class="btn-add-mov btn-add-mov-expense hover form-div-3">concluir &rarr;</button>
         </div>
       </section>
 
@@ -212,45 +240,48 @@
           <div>
             <div class="extract-mov-filter  ">
               <p class="filter-title">Filtros: </p>
-              <div class="filter-container">
-                <label class="filter-label">sequência</label>
-                <select name="" id="" class="filter-select filter-sequence">
-                  <option value="realization">Realização</option>
-                  <option value="recents">Recentes</option>
-                  <option value="oldest">Antigos</option>
-                </select>
+              <div class="extract-mov-filter-2 ">
+                <div class="filter-container">
+                  <label class="filter-label">sequência</label>
+                  <select name="" id="" class="filter-select filter-sequence">
+                    <option value="realization">Realização</option>
+                    <option value="recents">Recentes</option>
+                    <option value="oldest">Antigos</option>
+                  </select>
+                </div>
+  
+                <div class="filter-container">
+                  <label class="filter-label">data</label>
+                  <select name="" id="" class="filter-select filter-data">
+                    <option value="all">todas</option>
+                    <option value="week">essa semana</option>
+                    <option value="month">esse mês</option>
+                    <option value="year">esse ano</option>
+                  </select>
+                </div>
+  
+                <div class="filter-container">
+                  <p class="filter-label">situação</p>
+                  <select name="" id="" class="filter-select filter-situation">
+                    <option value="all">todas</option>
+                    <option value="recebido">recebido</option>
+                    <option value="pago">pago</option>
+                    <option value="a receber">a receber</option>
+                    <option value="a pagar">a pagar</option>
+                  </select>
+                </div>
+  
+                <div class="filter-container">
+                  <p class="filter-label">categoria</p>
+                  <select name="" id="" class="filter-select filter-category">
+                    <option value="all">todas</option>
+                    <option value="renda">Renda</option>
+                    <option value="transporte">Transporte</option>
+                    <option value="alimentação">Alimentação</option>
+                  </select>
+                </div>
               </div>
-
-              <div class="filter-container">
-                <label class="filter-label">data</label>
-                <select name="" id="" class="filter-select filter-data">
-                  <option value="all">todas</option>
-                  <option value="week">essa semana</option>
-                  <option value="month">esse mês</option>
-                  <option value="year">esse ano</option>
-                </select>
-              </div>
-
-              <div class="filter-container">
-                <p class="filter-label">situação</p>
-                <select name="" id="" class="filter-select filter-situation">
-                  <option value="all">todas</option>
-                  <option value="recebido">recebido</option>
-                  <option value="pago">pago</option>
-                  <option value="a receber">a receber</option>
-                  <option value="a pagar">a pagar</option>
-                </select>
-              </div>
-
-              <div class="filter-container">
-                <p class="filter-label">categoria</p>
-                <select name="" id="" class="filter-select filter-category">
-                  <option value="all">todas</option>
-                  <option value="renda">Renda</option>
-                  <option value="transporte">Transporte</option>
-                  <option value="alimentação">Alimentação</option>
-                </select>
-              </div>
+           
            
             </div>
 
@@ -260,6 +291,13 @@
           </div>
           </div>
          
+        </div>
+      </section>
+
+      <section class="grap-section section">
+        <div class="grap-container">
+          <p>aa</p>
+          <canvas id="myChart"></canvas>
         </div>
       </section>
     </main>
@@ -275,5 +313,43 @@
       </div>
     </div>
     <div class="overlay hidden-confirm"></div>
+
+    <script
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+  ></script>
+
+ 
+  <!-- <script src="./node_modules/chart.js/dist/chart.cjs"></script>
+  <script src="./assets/js/controler.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- <script>
+    const ctx = document.getElementById('myChart');
+  
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+          label: '# of Votes',
+          data: [12, 19, 3, 5, 2, 3],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script> -->
+
   </body>
 </html>

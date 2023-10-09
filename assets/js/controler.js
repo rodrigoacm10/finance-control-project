@@ -9,6 +9,9 @@ import valuesRender from "./views/indexPage/valuesRender.js";
 import RemoveMov from "./views/indexPage/removeMov.js";
 import FillMovs from "./views/indexPage/fillMovs.js";
 import GetOutView from "./views/indexPage/getOutView.js";
+import loadPageInfoView from "./views/indexPage/loadPageInfoView.js";
+// import { Chart } from "chart.js";
+import GraphView from "./views/indexPage/graphView.js";
 
 const controlerGetOutAcc = function () {
   GetOutView.removeMovsContainer();
@@ -29,6 +32,14 @@ const controlerLoadPage = function () {
   LoadPageInfoView.addMoviments(account);
 
   RemoveMov.addHandlerRomveMov(controlRemoveMov);
+  LoadPageInfoView.verifingMovsArr(
+    model.state.currentAccount.movimentsToPay,
+    model.state.currentAccount.movimentsToRecive
+  );
+  console.log(
+    model.state.currentAccount.movimentsToPay,
+    model.state.currentAccount.movimentsToRecive
+  );
 };
 
 // Toda vez que se apertar no botao de addum movimento vai ser retornado undefined
@@ -217,5 +228,33 @@ const init = function () {
   AddMovView.handlerAddBtnExpenseFunction(controlerAddMovExpense);
   valuesRender.consoleValues();
   GetOutView.addHandlerGetOutAcc(controlerGetOutAcc);
+  GetOutView.viewNavBarMobile();
+  GetOutView.closeNavBarMobile();
+  GraphView.addGraph();
 };
 init();
+
+///////////////////////
+
+// let ctx = document.getElementById("chart").getContext("2d");
+
+// let chart = new Chart(ctx, {
+//   type: "bar",
+//   data: {
+//     labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+//     datasets: [
+//       {
+//         label: "# of Votes",
+//         data: [12, 19, 3, 5, 2, 3],
+//         borderWidth: 1,
+//       },
+//     ],
+//   },
+//   options: {
+//     scales: {
+//       y: {
+//         beginAtZero: true,
+//       },
+//     },
+//   },
+// });
