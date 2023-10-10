@@ -95,6 +95,7 @@ const controlerAddMovRevenue = function () {
   console.log("------", model.state.currentAccount);
 
   RemoveMov.addHandlerRomveMov(controlRemoveMov);
+  GraphView.addMovsToGraphAllMov(model.state.currentAccount.moviments);
 };
 
 const controlerAddMovExpense = function () {
@@ -111,6 +112,7 @@ const controlerAddMovExpense = function () {
   console.log("------", model.state.currentAccount);
 
   RemoveMov.addHandlerRomveMov(controlRemoveMov);
+  GraphView.addMovsToGraphAllMov(model.state.currentAccount.moviments);
 };
 
 const thorowBackMoney = function (
@@ -205,10 +207,17 @@ const controlRemoveMov = function (movElement) {
   console.log(model.state.currentAccount);
   RemoveMov.clearAllContainer();
   controlerLoadPage();
+  console.log(model.state.currentAccount.moviments);
+  GraphView.addMovsToGraphAllMov(model.state.currentAccount.moviments);
 };
 
 const controlFilters = function () {
   FillMovs.fillFunction(model.state.currentAccount.moviments);
+  RemoveMov.addHandlerRomveMov(controlRemoveMov);
+};
+
+const controlGraph = function () {
+  GraphView.addGraph(model.state.currentAccount.moviments);
 };
 
 const init = function () {
@@ -230,7 +239,7 @@ const init = function () {
   GetOutView.addHandlerGetOutAcc(controlerGetOutAcc);
   GetOutView.viewNavBarMobile();
   GetOutView.closeNavBarMobile();
-  GraphView.addGraph();
+  GraphView.addGraphHandler(controlGraph);
 };
 init();
 

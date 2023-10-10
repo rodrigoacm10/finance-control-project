@@ -1,9 +1,15 @@
 export default class View {
   transformValues(value) {
-    const deletedSinalValue = value > 0 ? value : +`${value}`;
-    let strValueMod = `${value}`;
+    // console.log(value, typeof value);
+    // console.log("----a-s-d-s-w--------", +value.toFixed(2));
+    const valueNum = +value;
+    const numFixed = valueNum.toFixed(2);
+    console.log(valueNum);
+    console.log("----a-s-d-s-w--------", numFixed);
+    const deletedSinalValue = numFixed > 0 ? numFixed : +`${numFixed}`;
+    let strValueMod = `${numFixed}`;
 
-    if (value < 0) {
+    if (numFixed < 0) {
       strValueMod = strValueMod.replace("-", "");
     }
 
@@ -19,7 +25,7 @@ export default class View {
 
     if (!strValueMod.includes(".")) {
       strValue += ",00";
-    } else if (value > 0 || value < 0) {
+    } else if (numFixed > 0 || numFixed < 0) {
       strValue = `${strValue}`.replace(".", ",");
     }
 
