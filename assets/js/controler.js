@@ -12,6 +12,7 @@ import GetOutView from "./views/indexPage/getOutView.js";
 import loadPageInfoView from "./views/indexPage/loadPageInfoView.js";
 // import { Chart } from "chart.js";
 import GraphView from "./views/indexPage/graphView.js";
+import AddCategoryView from "./views/indexPage/addCategoryView.js";
 
 const controlerGetOutAcc = function () {
   GetOutView.removeMovsContainer();
@@ -240,6 +241,7 @@ const init = function () {
   GetOutView.viewNavBarMobile();
   GetOutView.closeNavBarMobile();
   GraphView.addGraphHandler(controlGraph);
+  AddCategoryView.addHandlerBtnsModel();
 };
 init();
 

@@ -544,6 +544,97 @@ body {
 }
 
 /**********************
+  ADD CATEGORY SECTION
+***********************/
+
+.btn--close-add {
+  font-family: inherit;
+  /* display: inline-block; */
+  color: inherit;
+  position: absolute;
+  top: -0.4rem;
+  right: 1.4rem;
+  font-size: 4.8rem;
+  cursor: pointer;
+  border: none;
+  background: none;
+  margin: 0;
+  padding: 0;
+}
+
+.add-category-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #8b8b8b;
+  z-index: 1003;
+  padding: 3.8rem 5.2rem;
+  border-radius: 9px;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+}
+
+.add-category-title {
+  font-size: 4.8rem;
+}
+
+/* .add-category-container-2 {
+  width: 75%;
+} */
+
+.add-category-input-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 1.4rem;
+}
+
+.add-category-content {
+  font-size: 1.4rem;
+}
+
+.add-category-input {
+  border-radius: 9px;
+  font-size: 1.4rem;
+  padding: 0.6rem;
+}
+
+.add-category-container-btns {
+  margin-top: 1.4rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+}
+
+.btn-add-category-container {
+  /* width: 100%; */
+  border: none;
+  border-radius: 9px;
+  padding: 1.2rem 2.4rem;
+  font-size: 1.4rem;
+}
+
+.btn-add-category-confirm {
+  background-color: #c5c5c5;
+}
+
+.add-category-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background-color: #1e1e1e; */
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  /* opacity: 1; */
+  z-index: 100;
+  transition: all 0.5s;
+}
+
+/**********************
   EXTRACT SECTION
 ***********************/
 

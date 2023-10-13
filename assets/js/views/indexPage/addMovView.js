@@ -322,8 +322,8 @@ class AddMovView extends View {
       data: `${year}-${month}-${day}`,
       situation: correcrtSituation,
       value: confirmatedValue,
-      category: this._btnCategorySelect.value,
-      description: this._btnDescription.value,
+      category: this._btnCategorySelectExpense.value,
+      description: this._btnDescriptionExpense.value,
     };
     // console.log(objMov);
 
