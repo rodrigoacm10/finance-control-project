@@ -12,9 +12,6 @@ class AddCategory {
 
   toggleModelOverlay() {
     this._inputCategory.value = "";
-    // console.log(this);
-    // console.log(this._modelElement);
-    // console.log(this._overlayElement);
     this._categoryContainer.classList.toggle("hidden-confirm");
     this._categoryOverlay.classList.toggle("hidden-confirm");
   }
