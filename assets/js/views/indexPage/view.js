@@ -1,11 +1,8 @@
 export default class View {
   transformValues(value) {
-    // console.log(value, typeof value);
-    // console.log("----a-s-d-s-w--------", +value.toFixed(2));
     const valueNum = +value;
     const numFixed = valueNum.toFixed(2);
-    console.log(valueNum);
-    console.log("----a-s-d-s-w--------", numFixed);
+
     const deletedSinalValue = numFixed > 0 ? numFixed : +`${numFixed}`;
     let strValueMod = `${numFixed}`;
 
@@ -16,11 +13,8 @@ export default class View {
     const splitStrValueMod = strValueMod.split(".");
     let strValue = strValueMod;
 
-    console.log("--------", [...strValueMod]);
-
     if (splitStrValueMod.length > 1 && splitStrValueMod[1].length == 1) {
       strValue += "0";
-      // console.log(splitStrValueMod);
     }
 
     if (!strValueMod.includes(".")) {
@@ -39,11 +33,11 @@ export default class View {
 
     if (dataSelect === "today") {
       [year, month, day] = new Date().toISOString().split("T")[0].split("-");
-      console.log([year, month, day]);
+
       return [year, month, day];
     } else if (dataSelect === "schedule") {
       [year, month, day] = dataInput.split("-");
-      console.log([year, month, day]);
+
       return [year, month, day];
     }
   }
@@ -52,9 +46,6 @@ export default class View {
     const today = new Date().toISOString().split("T")[0];
     const [yearToday, monthToday, dayToday] = today.split("-");
     const [yearMov, monthMov, dayMov] = data.split("-");
-    // console.log(today);
-    // console.log(dayToday, monthToday, yearToday);
-    // console.log(dayMov, monthMov, yearMov);
 
     if (today > data || today == data) return true;
   }

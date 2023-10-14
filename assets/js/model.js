@@ -1,5 +1,4 @@
 export const state = {
-  // currentAccountIndex: 10,
   accounts: [
     {
       userEmail: "sla@gmail.com",
