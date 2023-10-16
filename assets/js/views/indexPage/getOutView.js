@@ -31,14 +31,14 @@ class GetOutView {
   }
 
   funcViewNavBar() {
-    this._navBar.style.transform = "translateX(300px)";
+    this._navBar.style.transform = "translateX(370px)";
     this._navBar.style.visibility = "visible";
     this._mobileNavToOpen.style.display = "none";
     this._mobileNavToClose.style.display = "block";
   }
 
   funcCloseNavBar() {
-    this._navBar.style.transform = "translateX(500px)";
+    this._navBar.style.transform = "translateX(570px)";
 
     this._mobileNavToClose.style.display = "none";
     this._mobileNavToOpen.style.display = "block";
