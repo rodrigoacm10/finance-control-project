@@ -68,6 +68,7 @@ const addMovToArr = function (situation, obj) {
 
 const controlerAddMovRevenue = function () {
   const movObj = AddMovView.functionAddBtnRevenue();
+  if (!movObj) return;
   model.addMovimentToState(model.state.currentAccountIndex, movObj);
 
   addMovToArr(movObj.situation, movObj);
@@ -78,6 +79,7 @@ const controlerAddMovRevenue = function () {
 
 const controlerAddMovExpense = function () {
   const movObj = AddMovView.functionAddBtnExpense();
+  if (!movObj) return;
   model.addMovimentToState(model.state.currentAccountIndex, movObj);
 
   addMovToArr(movObj.situation, movObj);

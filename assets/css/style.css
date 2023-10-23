@@ -11,7 +11,9 @@ html {
   overflow-x: hidden;
   font-size: 62.5%;
 }
-
+/*  hideValue */
+/* main-nav */
+/* close-outline */
 body {
   transition: all 0.5s;
   font-family: "Outfit", sans-serif;
@@ -88,7 +90,7 @@ body {
 .close-outline {
   display: none;
   transition: all 0.3s;
-  transform: translateX(-750%);
+  transform: translateX(-920%);
 }
 
 /**********************
@@ -246,7 +248,8 @@ body {
 
 .hideValue {
   border-radius: 8px;
-  background-color: black;
+  background-color: #8b8b8b;
+  color: #8b8b8b;
   user-select: none;
 }
 
@@ -819,7 +822,8 @@ canvas {
     /* width: 100%; */
     display: block;
     background-color: rgba(255, 255, 255, 0.97);
-    position: absolute;
+    /* position: absolute; */
+    position: fixed;
     /* transform: translateX(150%); */
     transform: translateX(250%);
     /* pointer-events: none; */
@@ -829,6 +833,14 @@ canvas {
     width: 40%;
     height: 100vh;
     transition: all 0.5s;
+  }
+
+  .to-close {
+    transform: translateX(570px) !important;
+  }
+
+  .to-open {
+    transform: translateX(365px) !important;
   }
 
   .main-nav-list {
@@ -842,7 +854,8 @@ canvas {
   }
 
   li {
-    width: 90%;
+    /* width: 90%; */
+    width: 80%;
   }
 
   .img-container-mobile {
@@ -941,4 +954,180 @@ canvas {
 
 
  */
+}
+
+@media (max-width: 570px) {
+  .close-outline {
+    transform: translateX(-850%);
+  }
+
+  .to-close {
+    transform: translateX(570px) !important;
+  }
+
+  .to-open {
+    transform: translateX(350px) !important;
+  }
+}
+
+@media (max-width: 550px) {
+  .close-outline {
+    transform: translateX(-850%);
+  }
+
+  .to-close {
+    transform: translateX(570px) !important;
+  }
+
+  .to-open {
+    transform: translateX(330px) !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .modal-title {
+    text-align: center;
+  }
+
+  .close-outline {
+    transform: translateX(-800%);
+  }
+
+  .to-close {
+    transform: translateX(570px) !important;
+  }
+
+  .to-open {
+    transform: translateX(320px) !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .close-outline {
+    transform: translateX(-775%);
+  }
+
+  .to-close {
+    transform: translateX(570px) !important;
+  }
+
+  .to-open {
+    transform: translateX(300px) !important;
+  }
+}
+
+@media (max-width: 470px) {
+  .close-outline {
+    transform: translateX(-775%);
+  }
+
+  .to-close {
+    transform: translateX(570px) !important;
+  }
+
+  .to-open {
+    transform: translateX(280px) !important;
+  }
+}
+
+@media (max-width: 440px) {
+  .close-outline {
+    transform: translateX(-725%);
+  }
+
+  .to-close {
+    transform: translateX(570px) !important;
+  }
+
+  .to-open {
+    transform: translateX(265px) !important;
+  }
+}
+
+@media (max-width: 410px) {
+  .close-outline {
+    transform: translateX(-650%);
+  }
+
+  .to-close {
+    transform: translateX(570px) !important;
+  }
+
+  .to-open {
+    transform: translateX(245px) !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .close-outline {
+    transform: translateX(-650%);
+  }
+
+  .to-close {
+    transform: translateX(570px) !important;
+  }
+
+  .to-open {
+    transform: translateX(235px) !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .img-login-icon-mobile {
+    width: 16.8rem;
+  }
+
+  .close-outline {
+    transform: translateX(-650%);
+  }
+
+  .to-close {
+    transform: translateX(570px) !important;
+  }
+
+  .to-open {
+    transform: translateX(235px) !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .close-outline {
+    transform: translateX(-620%);
+  }
+
+  .to-close {
+    transform: translateX(570px) !important;
+  }
+
+  .to-open {
+    transform: translateX(217px) !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .close-outline {
+    transform: translateX(-600%);
+  }
+
+  .to-close {
+    transform: translateX(570px) !important;
+  }
+
+  .to-open {
+    transform: translateX(205px) !important;
+  }
+}
+
+@media (max-width: 320px) {
+  .close-outline {
+    transform: translateX(-600%);
+  }
+
+  .to-close {
+    transform: translateX(570px) !important;
+  }
+
+  .to-open {
+    transform: translateX(195px) !important;
+  }
 }
