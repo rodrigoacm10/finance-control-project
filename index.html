@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,338 +13,57 @@
     />
 
     <link rel="stylesheet" href="assets/css/style.css" />
-    <script defer type="module" src="assets/js/controler.js"></script>
-    <title>Document</title>
+    <script defer type="module" src="assets/js/controlerInit.js"></script>
   </head>
   <body>
     <header class="header">
       <div class="only-logo-nav">
         <p>logo</p>
       </div>
-
-      <nav class="main-nav">
-        <ul class="main-nav-list">
-          <li>
-            <div class="img-container-mobile">
-              <div class="">
-                <img class="img-login-icon-mobile" src="assets/img/dave.jpg" alt="perfil image">
-              </div>
-              <p class="perfil-name-mobile">sla</p>
-            </div>
-          </li>
-          <li><button  class="main-nav-link btn btn-perfil hover">sair</button></li>
-        </ul>
-      </nav>
-
-      <div class="btns-container-mobile">
-      <button class="btn-mobile-nav close-btn">
-        <ion-icon class="icon-mobile-nav close-outline" name="close-outline"></ion-icon>
-      </button>
-
-      <button class="btn-mobile-nav">
-        <ion-icon class="icon-mobile-nav menu-outline" name="menu-outline"></ion-icon>
-      
-      </button>
-      </div>
-     
-
-
     </header>
 
     <main>
-      <section class="values-section section">
-        <div class="perfil-container">
-          <div class="img-container-index">
-            <img class="img-login-icon" src="" alt="Foto de perfil" />
-            <p class="perfil-name">wagner Love</p>
+      <section class="login-section">
+        <div class="login-container">
+          <div class="img-container">
+            <img class="img-login-icon" src="assets/img/dave.jpg" alt="ICON" />
           </div>
 
-          <div class="buttons-container">
-            <button class="btn btn-perfil hover">Sair</button>
-          </div>
-        </div>
-
-        <div class="values-container">
-          <div class="values-container-content">
-            <div class="values-container-primary">
-              <div class="value-primary">
-                <p class="value-name-primary">Saldo total</p>
-                <p class="value-money-primary total-value">R$ 00,00</p>
-              </div>
-              <div>
-                <button class="eye-button">
-                  <div class="eye-icon close">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88" />
-                    </svg>
-                  </div>
-                 <div class="eye-icon open visible">
-                  <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"
-                  ></path>
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                  ></path>
-                </svg>
-                 </div>
-                </button>
-              </div>
-            </div>
-            <div class="values-container-secundary">
-              <div class="value-container-secundary">
-                <div class="value-secundary">
-                  <p class="value-name-secundary">Contas a pagar</p>
-                  <p class="value-money-secundary to-pay-value">R$ 00,00</p>
-                </div>
-              </div>
-
-              <div class="value-container-secundary">
-                <div class="value-secundary">
-                  <p class="value-name-secundary">Contas a receber</p>
-                  <p class="value-money-secundary to-receive-value">R$ 00,00</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="movement-section section">
-        <div class="add-mov-container">
-          <!-- <div class="add-mov-function">
-            <p>test</p>
-          </div> -->
-
-          <div class="add-mov-function add-mov-function-revenue">
-            <p class="mov-function-name">Adicionar Receita</p>
-          </div>
-
-          <div class="add-mov-function add-mov-function-expense">
-            <p class="mov-function-name">Adicionar Despesa</p>
-          </div>
-
-          <div class="add-mov-function add-mov-function-kept">
-            <p class="mov-function-name">Guardado</p>
-          </div>
-        </div>
-
-        <div class="add-mov-action add-mov-action-revenue hidden">
-          <div class="data-form form-div">
+          <form class="login-form" action="#">
             <div>
-              <!-- <label for="select-data">data</label> -->
-              <p class="form-label">data</p>
-              <select name="" id="select-data" class="select-data select-data-revenue form" required>
-                <option value="today">Hoje</option>
-                <option value="schedule">Agendar</option>
-              </select>
+              <p>E-mail</p>
+              <input
+                class="login-input user-input"
+                type="text"
+                placeholder="exemplo@gmail.com"
+                value="sla@gmail.com"
+              />
             </div>
 
-            <input class="hidden input-data input-data-revenue" type="date" id="input-data" />
-          </div>
-
-          <div class="situation-form form-div">
-            <p class="form-label">Situação</p>
-            <p id="situation-form-input" class="situation-form-input situation-form-input-revenue form received">recebido</p>
-          </div>
-
-          <div class="value-form form-div">
-            <p class="form-label">Valor</p>
-            <input id="value-form-input" type="number" class="value-form-input value-form-input-revenue form " placeholder="1000,00" value="0.00"></input>
-          </div>
-
-          <div class="category-form form-div">
-            <p class="form-label">Categoria</p>
-            <div class="form-div-2">
-                <select class="select-category select-category-revenue form" name="" id="select-category">
-              <option value="renda">Renda</option>
-              <option value="transporte">Transporte</option>
-              <option value="alimentação">Alimentação</option>
-            </select>
-            <button class="form btn-add-category">Add Categoria</button>
-            </div>
-          
-  
-          </div>
-
-          <div class="description-form form-div">
-            <p class="form-label">Descrição</p>
-            <input id="description-form-input" type="text" class="description-form-input description-form-input-revenue form" placeholder="Ex: Uber"></input>
-          </div>
-
-          <button class="btn-add-mov btn-add-mov-revenue hover form-div-3">concluir &rarr;</button>
-        </div>
-
-
-        <div class="add-mov-action add-mov-action-expense hidden">
-          <div class="data-form form-div">
             <div>
-          
-              <p class="form-label">data</p>
-              <select name="" id="select-data" class="select-data select-data-expense form" required>
-                <option value="today">Hoje</option>
-                <option value="schedule">Agendar</option>
-              </select>
+              <p>senha</p>
+              <input
+                class="login-input password-input"
+                type="password"
+                placeholder="1435"
+                value="123"
+              />
             </div>
 
-            <input class="hidden input-data input-data-expense" type="date" id="input-data" />
-          </div>
-
-          <div class="situation-form form-div">
-            <p class="form-label">Situação</p>
-            <p id="situation-form-input" class="form payed situation-form-inpu situation-form-input-expense">pago</p>
-          </div>
-
-          <div class="value-form form-div">
-            <p class="form-label">Valor</p>
-            <input id="value-form-input" type="number" class="form value-form-input value-form-input-expense " placeholder="1000,00" value="0.00"></input>
-          </div>
-
-          <div class="category-form form-div">
-            <p class="form-label">Categoria</p>
-            <div class="form-div-2">
-                <select class="form select-category select-category-expense" name="" id="select-category">
-              <option value="renda">Renda</option>
-              <option value="transporte">Transporte</option>
-              <option value="alimentação">Alimentação</option>
-            </select>
-            <button class="form  btn-add-category">Add Categoria</button>
+            <div class="btns-container">
+              <button class="btn btn-sing-in hover">entrar</button>
+              <!-- <div class="form-help-links">
+                <a href="#">Esqueci a senha</a>
+                <a href="#">Criar conta</a>
+              </div> -->
             </div>
-          
-  
-          </div>
-
-          <div class="description-form form-div">
-            <p class="form-label">Descrição</p>
-            <input id="description-form-input" type="text" class="form description-form-input description-form-input-expense" placeholder="Ex: Uber"></input>
-          </div>
-
-          <button class="btn-add-mov btn-add-mov-expense hover form-div-3">concluir &rarr;</button>
-        </div>
-      </section>
-
-      <section class="extract-section section">
-        <div class="extract-container">
-          <p class="section-title">Extrato</p>
-          
-          <div>
-            <div class="extract-mov-filter  ">
-              <p class="filter-title">Filtros: </p>
-              <div class="extract-mov-filter-2 ">
-                <div class="filter-container">
-                  <label class="filter-label">sequência</label>
-                  <select name="" id="" class="filter-select filter-sequence">
-                    <option value="realization">Realização</option>
-                    <option value="recents">Recentes</option>
-                    <option value="oldest">Antigos</option>
-                  </select>
-                </div>
-  
-                <div class="filter-container">
-                  <label class="filter-label">data</label>
-                  <select name="" id="" class="filter-select filter-data">
-                    <option value="all">todas</option>
-                    <option value="week">essa semana</option>
-                    <option value="month">esse mês</option>
-                    <option value="year">esse ano</option>
-                  </select>
-                </div>
-  
-                <div class="filter-container">
-                  <p class="filter-label">situação</p>
-                  <select name="" id="" class="filter-select filter-situation">
-                    <option value="all">todas</option>
-                    <option value="recebido">recebido</option>
-                    <option value="pago">pago</option>
-                    <option value="a receber">a receber</option>
-                    <option value="a pagar">a pagar</option>
-                  </select>
-                </div>
-  
-                <div class="filter-container">
-                  <p class="filter-label">categoria</p>
-                  <select name="" id="" class="filter-select filter-category">
-                    <option value="all">todas</option>
-                    <option value="renda">Renda</option>
-                    <option value="transporte">Transporte</option>
-                    <option value="alimentação">Alimentação</option>
-                  </select>
-                </div>
-              </div>
-           
-           
-            </div>
-
-             <div class="extract-mov-container">
-          
-
-          </div>
-          </div>
-         
-        </div>
-      </section>
-
-      <section class="grap-section section">
-        <div class="grap-container">
-          <p>aa</p>
-          <canvas id="myChart"></canvas>
+          </form>
         </div>
       </section>
     </main>
 
-    <footer></footer>
-    <div class="modal hidden-confirm">
-      <button class="btn--close-modal">&times;</button>
-      <h2 class="modal-title">Tem certeza?</h2>
-      <p class="modal-content">Tem certeza que deseja sair da conta?</p>
-      <div class="modal-container-btns">
-        <button class="btn-modal">não</button>
-        <button class="btn-modal btn-modal-confirm">sim</button>
-      </div>
-    </div>
-    <div class="overlay hidden-confirm"></div>
-
-    <div class="add-category-container">
-      <button class="btn--close-add">&times;</button>
-      <h2 class="add-category-title">Criando categoria</h2>
-      <!-- <div class="add-category-container-2"> -->
-          <div class="add-category-input-container">
-         <p class="add-category-content">Tem certeza que deseja sair da conta?</p>
-         <input class="add-category-input" type="text" placeholder="Ex: Hoteis">
-      </div>
-     
-      <div class="add-category-container-btns">
-        <button class="btn-add-category-container btn-add-category-container-cancel">cancelar</button>
-        <button class="btn-add-category-container btn-add-category-confirm">criar</button>
-      </div>
-      <!-- </div> -->
-    </div>
-    <div class="add-category-overlay"></div>
-
-    <script
-    type="module"
-    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-  ></script>
-  <script
-    nomodule
-    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-  ></script>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-
-
+    <footer>
+      <p></p>
+    </footer>
   </body>
 </html>

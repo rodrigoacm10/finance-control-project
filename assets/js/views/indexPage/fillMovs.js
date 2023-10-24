@@ -8,11 +8,6 @@ class FillMovs extends View {
   _filterSituation = document.querySelector(".filter-situation");
   _filterCategory = document.querySelector(".filter-category");
 
-  //   .addEventListener(
-  //     "input",
-
-  // fazer uma funcção que toda vez que mudar de coisa input, vai ser chamada uma função, e essa função vai pegar os valores de cada seleção. Detalhe que a função tem q receber o arrau de moviments e criar uma copia do array pra n ter estresse
-
   addHandlerInputs(handler) {
     this._allFilters.forEach((el) =>
       el.addEventListener("input", function (e) {
@@ -22,60 +17,44 @@ class FillMovs extends View {
     );
   }
 
-  // Criar um função par asaber se a data está dentro de uma semana  ou mês,
   checkWeek(elDate) {
     const curData = new Date().toISOString();
     let weekDate = new Date();
     weekDate.setDate(weekDate.getDate() - 7);
-    console.log(weekDate.toISOString());
 
     const todayDate = curData.split("T")[0];
     const weekInitial = weekDate.toISOString().split("T")[0];
-    console.log(weekInitial);
 
-    console.log(elDate >= weekInitial && elDate <= todayDate);
-    console.log(curData > weekDate.toISOString());
     if (elDate >= weekInitial && elDate <= todayDate) {
       return true;
     } else return false;
   }
 
-  // rever a diminuição de dias
   checkMonth(elDate) {
     const curData = new Date().toISOString();
     let monthDate = new Date();
     monthDate.setDate(monthDate.getDate() - 28);
-    console.log(monthDate.toISOString());
 
     const todayDate = curData.split("T")[0];
     const weekInitial = monthDate.toISOString().split("T")[0];
-    console.log(weekInitial);
 
-    console.log(elDate >= weekInitial && elDate <= todayDate);
-    console.log(curData > monthDate.toISOString());
     if (elDate >= weekInitial && elDate <= todayDate) {
       return true;
     } else return false;
   }
 
-  // rever a diminuição de dias
   checkYear(elDate) {
     const curData = new Date().toISOString();
     let yearDate = new Date();
     yearDate.setDate(yearDate.getDate() - 365);
-    console.log(yearDate.toISOString());
 
     const todayDate = curData.split("T")[0];
     const weekInitial = yearDate.toISOString().split("T")[0];
-    console.log(weekInitial);
 
-    console.log(elDate >= weekInitial && elDate <= todayDate);
-    console.log(curData > yearDate.toISOString());
     if (elDate >= weekInitial && elDate <= todayDate) {
       return true;
     } else return false;
   }
-  // usar o sort no select de sequencia quando for as opções mais proximo e mais longe sla os nomes, e em realizações nos colocamos por ID
 
   fillFunction(originalArray) {
     const arrMovCopy = [...originalArray];
@@ -87,36 +66,25 @@ class FillMovs extends View {
 
     let arrSorted = [...arrMovCopy];
     if (filterSequence === "realization") {
-      console.log("realization");
     } else if (filterSequence === "recents") {
       arrSorted.sort((a, b) => {
         if (a.data < b.data) return -1;
         else return +1;
       });
-
-      console.log("recents");
     } else if (filterSequence === "oldest") {
       arrSorted.sort((a, b) => {
         if (a.data > b.data) return -1;
         else return +1;
       });
-
-      console.log("oldest");
     }
-
-    console.log(arrSorted);
 
     let arrData;
     arrData = arrSorted.filter((el) => {
       if (filterSituation == "all") return typeof el.situation == "string";
       else {
-        console.log(el.situation, filterSituation);
-        console.log("-a-", el.situation == filterSituation);
         return el.situation == filterSituation;
       }
     });
-
-    console.log("-a-b-", arrData);
 
     arrData = arrData.filter((el) => {
       if (filterCategory == "all") return typeof el.category == "string";
@@ -125,33 +93,17 @@ class FillMovs extends View {
       }
     });
 
-    console.log("-a-b-c-", arrData);
-
     arrData = arrData.filter((el) => {
-      console.log(el.data, filterData);
       if (filterData == "all") {
         return typeof el.data == "string";
       } else if (filterData == "week") {
-        console.log("difoj");
         return this.checkWeek(el.data) == true;
       } else if (filterData == "month") {
-        console.log("df");
         return this.checkMonth(el.data) == true;
       } else if (filterData == "year") {
-        console.log("sdfd");
         return this.checkYear(el.data) == true;
       }
     });
-    console.log("-a-b-c-d-", arrData);
-    console.log(arrData);
-
-    console.log(arrMovCopy);
-
-    console.log(filterSequence, filterData, filterSituation, filterCategory);
-    console.log(this._filterSequence.value);
-    console.log(this._filterData.value);
-    console.log(this._filterSituation.value);
-    console.log(this._filterCategory.value);
 
     this._movContainer.innerHTML = "";
     arrData.map((el) => {
@@ -192,15 +144,9 @@ class FillMovs extends View {
   }
 
   test() {
-    this._filterData.addEventListener("input", function () {
-      console.log("asder");
-    });
-    this._filterSituation.addEventListener("input", function () {
-      console.log("asder");
-    });
-    this._filterCategory.addEventListener("input", function () {
-      console.log("asder");
-    });
+    this._filterData.addEventListener("input", function () {});
+    this._filterSituation.addEventListener("input", function () {});
+    this._filterCategory.addEventListener("input", function () {});
   }
 }
 export default new FillMovs();

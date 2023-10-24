@@ -12,9 +12,6 @@ class AddCategory {
 
   toggleModelOverlay() {
     this._inputCategory.value = "";
-    // console.log(this);
-    // console.log(this._modelElement);
-    // console.log(this._overlayElement);
     this._categoryContainer.classList.toggle("hidden-confirm");
     this._categoryOverlay.classList.toggle("hidden-confirm");
   }
@@ -31,7 +28,6 @@ class AddCategory {
     this._selectAddExpense.insertAdjacentHTML("beforeend", html);
     this._selectAddRevenue.insertAdjacentHTML("beforeend", html);
     this._selectFill.insertAdjacentHTML("beforeend", html);
-    console.log(html);
 
     this.toggleModelOverlay();
   }
@@ -39,7 +35,6 @@ class AddCategory {
   addHandlerBtnsModel() {
     this._btnCreate.addEventListener("click", this.handlerCreate.bind(this));
 
-    // usar o forEach
     this._btnAddCategory.forEach((el) =>
       el.addEventListener("click", this.toggleModelOverlay.bind(this))
     );

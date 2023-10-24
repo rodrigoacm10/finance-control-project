@@ -4,9 +4,8 @@ import LoginView from "./views/initPage/loginView.js";
 const controlGetUserAndPass = function () {
   try {
     const data = LoginView.loginBtnFunction();
-    console.log(data);
+
     model.findIndexAccout(data);
-    console.log(model.state.currentAccountIndex);
 
     if (model.state.currentAccountIndex != -1) {
       LoginView.movToIndexPage(model.state.currentAccountIndex);
@@ -20,6 +19,5 @@ const controlGetUserAndPass = function () {
 
 const initPageInit = function () {
   LoginView.loginBtn(controlGetUserAndPass);
-  // console.log(LoginView.loginBtn());
 };
 initPageInit();

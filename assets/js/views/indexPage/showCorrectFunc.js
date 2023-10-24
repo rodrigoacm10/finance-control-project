@@ -10,8 +10,6 @@ class ShowCorrectFunc {
   }
 
   revenueFunction() {
-    console.log("as");
-
     if (!this._expenseBox.classList.contains("hidden"))
       this._expenseBox.classList.toggle("hidden");
     this._revenueBox.classList.toggle("hidden");
@@ -22,8 +20,6 @@ class ShowCorrectFunc {
   }
 
   expenseFunction() {
-    console.log("bla");
-
     if (!this._revenueBox.classList.contains("hidden"))
       this._revenueBox.classList.toggle("hidden");
     this._expenseBox.classList.toggle("hidden");
@@ -31,17 +27,3 @@ class ShowCorrectFunc {
 }
 
 export default new ShowCorrectFunc();
-{
-  /* <div class="add-mov-function add-mov-function-revenue">
-<p class="mov-function-name">Adicionar Receita</p>
-</div>
-
-<div class="add-mov-function add-mov-function-expense">
-<p class="mov-function-name">Adicionar Despesa</p>
-</div>
-
-<div class="add-mov-function add-mov-function-kept">
-<p class="mov-function-name">Guardado</p>
-</div>
-</div> */
-}

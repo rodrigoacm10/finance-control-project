@@ -28,16 +28,10 @@ class AddMovView extends View {
   _movimentsValuesArr = [];
 
   handlerAddBtnRevenueFunction(handler) {
-    this._btnMovRevenue.addEventListener(
-      "click",
-      function (e) {
-        console.log("asssdasdadfrgfg");
-        e.preventDefault();
-        handler();
-      }
-
-      // this.functionAddBtn.bind(this)
-    );
+    this._btnMovRevenue.addEventListener("click", function (e) {
+      e.preventDefault();
+      handler();
+    });
   }
 
   movimentValidation(
@@ -55,19 +49,16 @@ class AddMovView extends View {
     const category = categoryBtn.value;
     const description = descriptionBtn.value;
     let booleanError = true;
-    // vou ter q receber os proprios botões e colocar textContent etc para conseguir mudar os input para cor vermelha, no caso a borda -> 1px solid #red
-    console.log(dataSelec, dataInput, situation, value, category, description);
 
     if (dataSelec === "schedule" && dataInput == "") {
       dataInputBtn.style.border = "1px solid red";
-      console.log("colocar o datainput como vermelho");
-      // return false;
+
       booleanError = false;
     }
 
     if (value == 0) {
       valueBtn.style.border = "1px solid red";
-      // return false;
+
       booleanError = false;
     }
 
@@ -87,11 +78,8 @@ class AddMovView extends View {
     categoryBtn,
     descriptionBtn
   ) {
-    console.log("---as-");
-
     const arrValues = [dataInputBtn, valueBtn, descriptionBtn];
 
-    console.log("---as-");
     arrValues.forEach((el) => (el.value = ""));
     arrValues.forEach((el) => (el.style.border = "1px solid #333"));
   }
@@ -108,18 +96,8 @@ class AddMovView extends View {
     const hours = dataVariable.getHours();
 
     const idSimulation = +`${seconds}${minutes}${hours}${day}${month}${year}`;
-    console.log(idSimulation, typeof idSimulation);
-
-    console.log(day, month, year);
 
     const minusPlus = this.sinalExpenseRevenue(this._btnMovRevenue);
-
-    console.log(this._btnDataSelect.value);
-    console.log(this._btnDataInput.value);
-    console.log(this._btnSituation.textContent);
-    console.log(this._btnValue.value);
-    console.log(this._btnCategorySelect.value);
-    console.log(this._btnDescription.value);
 
     const validationMoviment = this.movimentValidation(
       this._btnDataSelect,
@@ -132,22 +110,18 @@ class AddMovView extends View {
 
     if (!validationMoviment) return;
 
-    // insertHTML
-
     const correctValue = this.transformValues(this._btnValue.value);
 
     const booleanValueData = this._btnDataInput.value
       ? this.confirmingSituation(this._btnDataInput.value)
       : false;
 
-    // if (this._btnDataInput.value) console.log("asdassdasd");
     const correcrtSituation = this.testSituation(
       booleanValueData,
       this._btnSituation.textContent
     );
 
     const confirmatedValue = this.modfvalue(minusPlus, this._btnValue.value);
-    console.log(confirmatedValue);
 
     const classSituation = this.getSituationClass(correcrtSituation);
 
@@ -170,12 +144,7 @@ class AddMovView extends View {
 
     this._movimentsContainer.insertAdjacentHTML("afterbegin", html);
 
-    // return blockInfos
-
     this._movimentsValuesArr.push(+this._btnValue.value);
-    console.log(this._movimentsValuesArr);
-
-    console.log(confirmatedValue, typeof confirmatedValue);
 
     const objMov = {
       id: idSimulation,
@@ -185,7 +154,6 @@ class AddMovView extends View {
       category: this._btnCategorySelect.value,
       description: this._btnDescription.value,
     };
-    // console.log(objMov);
 
     this.initAddMov(
       this._btnDataSelect,
@@ -208,12 +176,9 @@ class AddMovView extends View {
     let confirmatedValue = value;
     if (booleanValue) {
       confirmatedValue = "-" + value;
-      console.log(confirmatedValue);
 
       confirmatedValue = +confirmatedValue;
-      console.log(confirmatedValue);
     }
-    console.log(confirmatedValue, typeof confirmatedValue);
     return +confirmatedValue;
   }
 
@@ -241,18 +206,8 @@ class AddMovView extends View {
     const hours = dataVariable.getHours();
 
     const idSimulation = +`${seconds}${minutes}${hours}${day}${month}${year}`;
-    console.log(idSimulation, typeof idSimulation);
 
     const minusPlus = this.sinalExpenseRevenue(this._btnMovExpense);
-
-    console.log(this._btnDataSelectExpense.value);
-    console.log(this._btnDataInputExpense.value);
-    console.log(this._btnSituationExpense.textContent);
-    console.log(this._btnValueExpense.value);
-    console.log(this._btnCategorySelectExpense.value);
-    console.log(this._btnDescriptionExpense.value);
-
-    console.log("--------", this._btnDataSelectExpense);
 
     const validationMoviment = this.movimentValidation(
       this._btnDataSelectExpense,
@@ -265,15 +220,12 @@ class AddMovView extends View {
 
     if (!validationMoviment) return;
 
-    // insertHTML
-
     const correctValue = this.transformValues(this._btnValueExpense.value);
 
     const booleanValueData = this._btnDataInputExpense.value
       ? this.confirmingSituation(this._btnDataInputExpense.value)
       : false;
 
-    // if (this._btnDataInput.value) console.log("asdassdasd");
     const correcrtSituation = this.testSituation(
       booleanValueData,
       this._btnSituationExpense.textContent
@@ -283,7 +235,6 @@ class AddMovView extends View {
       minusPlus,
       this._btnValueExpense.value
     );
-    console.log(confirmatedValue);
 
     const classSituation = this.getSituationClass(correcrtSituation);
 
@@ -310,12 +261,7 @@ class AddMovView extends View {
 
     this._movimentsContainer.insertAdjacentHTML("afterbegin", html);
 
-    // return blockInfos
-
     this._movimentsValuesArr.push(+this._btnValueExpense.value);
-    console.log(this._movimentsValuesArr);
-
-    console.log(confirmatedValue);
 
     const objMov = {
       id: idSimulation,
@@ -336,8 +282,6 @@ class AddMovView extends View {
       this._btnDescriptionExpense
     );
 
-    console.log(10 + -11);
-
     return objMov;
   }
 
@@ -349,11 +293,6 @@ class AddMovView extends View {
   }
 
   functionShowData() {
-    // if (e.target.classList.contains('nav__link')) {
-    //   const clicked = e.target.closest('.nav__link');
-
-    // console.log("ok");
-    // console.log(this);
     this._btnDataInput.classList.toggle("hidden");
     this._btnSituation.classList.toggle("to-recive");
     this._btnDataSelect.value === "today"
@@ -369,8 +308,6 @@ class AddMovView extends View {
   }
 
   functionShowDataExpense() {
-    // console.log("ok");
-    // console.log(this);
     this._btnDataInputExpense.classList.toggle("hidden");
     this._btnSituationExpense.classList.toggle("to-pay");
     this._btnDataSelectExpense.value === "today"

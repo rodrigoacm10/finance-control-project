@@ -14,38 +14,13 @@ class LoadPageInfoView extends View {
     console.log("sdfsdf");
     const urlParams = new URLSearchParams(window.location.search);
     const accIndex = urlParams.get("parametro1");
-    // const parametro2 = urlParams.get("parametro2");
-
-    // console.log(accIndex); // Exibirá "valor1"
-    // console.log(parametro2); // Exibirá "valor2"
     return accIndex;
   }
 
   addMoviments(data) {
     const moviments = data.moviments;
-    console.log(moviments);
-    // return moviments.map((el) => {
+
     return moviments.map((el) => {
-      // const type = mov > 0 ? "deposit" : "withdrawal";
-
-      // data: "2023-09-13",
-      //     situation: "",
-      //     value: 100.0,
-      //     category: "Renda",
-      //     description: "salário",
-
-      //  VAI RETORNAR TRUE OU FALSO, SE FOR FALSO VAMOS USAR UM IF(!), QUE IRA MODIFICAR O CONFIRMEDsITUATION PARA TIRAR O A DA PALAVRA -> EL.SITUATION = CONFIRMEDSITUATION('A PAGAR').SPLIT(' ')[1] -> FICANDO PAGAR
-      // const booleanSituation = this.confirmingSituation(el.data);
-
-      // const confirmSituation = this.testSituation(
-      //   booleanSituation,
-      //   el.situation
-      // );
-
-      // el.situation = confirmSituation;
-
-      // const situation = this.getSituationClass(el.situation);
-
       const booleanValueData = el.data
         ? this.confirmingSituation(el.data)
         : false;
@@ -79,16 +54,6 @@ class LoadPageInfoView extends View {
     `;
 
       this._movimentsContainer.insertAdjacentHTML("afterbegin", html);
-
-      // const objMov = {
-      //   data: `${year}-${month}-${day}`,
-      //   situation: correcrtSituation,
-      //   value: el.value,
-      //   category: el.category,
-      //   description: el.description,
-      // };
-
-      // return objMov;
     });
   }
 
@@ -96,24 +61,26 @@ class LoadPageInfoView extends View {
     const totalValueContent = this._totalValue.textContent.split(" ");
     const toPayValueContent = this._toPayValue.textContent.split(" ");
     const toReceiveValueContent = this._toReceiveValue.textContent.split(" ");
+    console.log("a-a-a-a-a-a-a-aaa", totalValueContent);
 
     const totalValueCurAcc = +data.totalValue;
+    console.log("zz-z-z-z-z-zz--zz--z", totalValueCurAcc);
 
     const toPayValueCurAcc = +data.valueToPay;
 
     const toReceiveValueCurAcc = +data.valueToReceive;
 
-    const totalValueTransformed = this.transformValues(totalValueCurAcc);
+    const totalValueTransformed =
+      this.transformValuesInfosAcc(totalValueCurAcc);
     totalValueContent[1] = totalValueTransformed;
-    console.log(totalValueContent);
 
-    const toPayValueTransformed = this.transformValues(toPayValueCurAcc);
+    const toPayValueTransformed =
+      this.transformValuesInfosAcc(toPayValueCurAcc);
     toPayValueContent[1] = toPayValueTransformed;
-    console.log(toPayValueContent);
 
-    const toReceiveTransformed = this.transformValues(toReceiveValueCurAcc);
+    const toReceiveTransformed =
+      this.transformValuesInfosAcc(toReceiveValueCurAcc);
     toReceiveValueContent[1] = toReceiveTransformed;
-    console.log(toReceiveValueContent);
 
     this._userName.textContent = data.username;
     this._userImage.src = data.userImage;
@@ -124,9 +91,7 @@ class LoadPageInfoView extends View {
     this._toReceiveValue.textContent = toReceiveValueContent.join(" ");
   }
 
-  // vai pegar esses dois arrays, percorrer, e quando o resultado for falso, vou pegar o array dentro do forEach(o terceiro parametro) e vou uar splice(indexDoMov, 1) e vou dar push em um arr só cm os movimentos que foram removidos e dps retornar esses arrays, e no controller fzr um loop neles e dar push em cada um nos seus devidos arrays
   verifingMovsArr(arrToPay, arrToReceive) {
-    console.log(arrToPay, arrToReceive);
     const arrPaided = [];
     const arrReceived = [];
     arrToPay.forEach((el) => el);
