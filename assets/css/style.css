@@ -797,6 +797,30 @@ canvas {
     font-size: 32%;
   }
 
+  .login-container {
+    width: 50rem;
+    font-size: 160%;
+  }
+
+  .img-container {
+    width: 20.8rem;
+    height: 20.8rem;
+  }
+
+  .img-login-icon {
+    width: 18rem;
+  }
+
+  .btn-sing-in {
+    margin-top: 1.4rem !important;
+    padding: 2rem 0;
+  }
+
+  .login-input {
+    padding: 2rem 0;
+    padding-left: 0.8rem;
+  }
+
   .header {
     display: flex;
     /* position: fixed; */

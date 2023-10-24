@@ -26,6 +26,29 @@ export default class View {
     return strValue;
   }
 
+  transformValuesInfosAcc(value) {
+    const valueNum = +value;
+    const numFixed = valueNum.toFixed(2);
+
+    const deletedSinalValue = numFixed > 0 ? numFixed : +`${numFixed}`;
+    let strValueMod = `${numFixed}`;
+
+    const splitStrValueMod = strValueMod.split(".");
+    let strValue = strValueMod;
+
+    if (splitStrValueMod.length > 1 && splitStrValueMod[1].length == 1) {
+      strValue += "0";
+    }
+
+    if (!strValueMod.includes(".")) {
+      strValue += ",00";
+    } else if (numFixed > 0 || numFixed < 0) {
+      strValue = `${strValue}`.replace(".", ",");
+    }
+
+    return strValue;
+  }
+
   getDataFormat(dataSelect, dataInput) {
     let day = " ";
     let month = " ";

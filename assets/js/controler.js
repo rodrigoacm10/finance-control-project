@@ -106,7 +106,9 @@ const thorowBackMoney = function (
 };
 
 const controlRemoveMov = function (movElement) {
+  console.log("--------", movElement);
   const idControl = RemoveMov.removingMov(movElement);
+  console.log(idControl);
 
   const indexMovGeral = model.state.currentAccount.moviments.findIndex(
     (el) => el.id == idControl
@@ -165,6 +167,7 @@ const controlRemoveMov = function (movElement) {
     indexMovToReceive
   );
 
+  console.log(thorowBackMoney);
   thorowBackMoney(test1, test2, test3, test4, test5, test6);
 
   RemoveMov.clearAllContainer();

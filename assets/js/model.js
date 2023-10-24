@@ -395,6 +395,7 @@ export const removingMovToReceive = function (accIndex, movIndex) {
 };
 
 export const throwTotalValue = function (accIndex, valueReceived) {
+  console.log("b-b-b-b--b-b-b--b", valueReceived);
   state.accounts[accIndex].totalValue += -valueReceived;
   console.log(state.accounts[accIndex]);
 };

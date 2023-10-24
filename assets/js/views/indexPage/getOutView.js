@@ -89,7 +89,8 @@ class GetOutView {
   }
 
   moveToInitPage() {
-    window.location.href = `init.html`;
+    // window.location.href = `init.html`;
+    window.location.href = `index.html`;
   }
 }
 

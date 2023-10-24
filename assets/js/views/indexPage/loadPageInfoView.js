@@ -61,20 +61,25 @@ class LoadPageInfoView extends View {
     const totalValueContent = this._totalValue.textContent.split(" ");
     const toPayValueContent = this._toPayValue.textContent.split(" ");
     const toReceiveValueContent = this._toReceiveValue.textContent.split(" ");
+    console.log("a-a-a-a-a-a-a-aaa", totalValueContent);
 
     const totalValueCurAcc = +data.totalValue;
+    console.log("zz-z-z-z-z-zz--zz--z", totalValueCurAcc);
 
     const toPayValueCurAcc = +data.valueToPay;
 
     const toReceiveValueCurAcc = +data.valueToReceive;
 
-    const totalValueTransformed = this.transformValues(totalValueCurAcc);
+    const totalValueTransformed =
+      this.transformValuesInfosAcc(totalValueCurAcc);
     totalValueContent[1] = totalValueTransformed;
 
-    const toPayValueTransformed = this.transformValues(toPayValueCurAcc);
+    const toPayValueTransformed =
+      this.transformValuesInfosAcc(toPayValueCurAcc);
     toPayValueContent[1] = toPayValueTransformed;
 
-    const toReceiveTransformed = this.transformValues(toReceiveValueCurAcc);
+    const toReceiveTransformed =
+      this.transformValuesInfosAcc(toReceiveValueCurAcc);
     toReceiveValueContent[1] = toReceiveTransformed;
 
     this._userName.textContent = data.username;

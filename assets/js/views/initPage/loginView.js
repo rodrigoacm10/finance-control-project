@@ -15,7 +15,8 @@ class LoginView {
     return [this._userInput.value, this._passwordInput.value];
   }
   movToIndexPage(indexAcc) {
-    window.location.href = `index.html?parametro1=${indexAcc}`;
+    // window.location.href = `index.html?parametro1=${indexAcc}`;
+    window.location.href = `init.html?parametro1=${indexAcc}`;
   }
 }
 
