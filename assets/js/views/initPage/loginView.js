@@ -16,6 +16,7 @@ class LoginView {
   }
   movToIndexPage(indexAcc) {
     // window.location.href = `index.html?parametro1=${indexAcc}`;
+    // passar os parametros index nome sobrenome senha email
     window.location.href = `init.html?parametro1=${indexAcc}`;
   }
 }

@@ -12,8 +12,19 @@ class LoadPageInfoView extends View {
 
   getAccIndex() {
     console.log("sdfsdf");
+    // vou ter q pegar os parametros de index nome, sobreome, senha, email
     const urlParams = new URLSearchParams(window.location.search);
     const accIndex = urlParams.get("parametro1");
+    const testando = urlParams.get("parametro2");
+    const name = urlParams.get("name");
+    const surName = urlParams.get("surname");
+    const email = urlParams.get("email");
+    const password = urlParams.get("password");
+    const confirmPassword = urlParams.get("confirmpassword");
+
+    console.log("- as- s -fg dfg - -ghg- ", testando);
+    console.log(accIndex, name, surName, email, password, confirmPassword);
+    // passar um objeto com os parametros
     return accIndex;
   }
 

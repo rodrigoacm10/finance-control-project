@@ -23,6 +23,8 @@ const controlerGetOutAcc = function () {
 };
 
 const controlerLoadPage = function () {
+  // tem q ser uma estrutura dessa
+  // const { index, nome, sobrenome, senha, email } =LoadPageInfoView.getAccIndex();
   model.state.currentAccountIndex = LoadPageInfoView.getAccIndex();
   model.state.currentAccount =
     model.state.accounts[model.state.currentAccountIndex];
