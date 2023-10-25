@@ -15,7 +15,6 @@ Esta solução é dedicada ao usuário para lançamentos de despesas e aportes p
       2.2. Desenvolvimento
     
     3. Autores
-    4. Agradecimentos
 
 ### Visão Geral
 O aplicativo de Finanças Pessoais é uma ferramenta projetada para ajudar os usuários a otimizar o controle de suas despesas pessoais. Com recursos intuitivos e uma interface amigável, o aplicativo permite que os usuários acompanhem suas receitas e despesas, definam metas financeiras, criem orçamentos personalizados e recebam insights valiosos sobre seus hábitos de gastos.
@@ -38,13 +37,13 @@ O aplicativo de Finanças Pessoais foi construído utilizando as seguintes tecno
 *	Interface de Usuário: HTML, CSS.
 
 ### Ligações
-**	 [Link para o aplicativo](https://www.exemplo.com)
+**	 [Link para o aplicativo](https://github.com/rodrigoacm10/finance-control-project)
 
 ### Processo
 Durante o desenvolvimento do aplicativo de Finanças Pessoais, foram seguidas as seguintes etapas:
 1. Análise de requisitos e definição de funcionalidades.
 2. Design da interface do usuário e criação de protótipos.
-3.  Desenvolvimento da interface de usuário utilizando HTML, CSS e JavaScript.
+3. Desenvolvimento da interface de usuário utilizando HTML, CSS e JavaScript.
 4. Testes e correções de bugs.
 5. Implantação do aplicativo.
 
@@ -52,18 +51,15 @@ Durante o desenvolvimento do aplicativo de Finanças Pessoais, foram seguidas as
 Durante o processo de construção do aplicativo de Finanças Pessoais, foram adquiridos conhecimentos valiosos sobre o desenvolvimento de aplicativos web, gerenciamento de dados financeiros, segurança da informação e usabilidade. Além disso, a equipe aprimorou suas habilidades em programação JavaScript.
 
 ### Desenvolvimento
-O aplicativo de Finanças Pessoais foi desenvolvido pela equipe composta por Aline Dias, João Gabriel e Rodrigo Andrade do curso de front end desenvolvido e ministrado pela iniciativa de formação acelerada, com a orientação do professor Reydne Bruno. O projeto foi concluído no período de um mês, seguindo as melhores práticas de desenvolvimento de software e garantindo a qualidade e segurança do produto.
+O aplicativo de Finanças Pessoais foi desenvolvido pela equipe composta por Aline Dias, João Gabriel e Rodrigo Andrade. O projeto foi concluído no período de um mês, seguindo as melhores práticas de desenvolvimento de software e garantindo a qualidade e segurança do produto.
 
 ### Autores
-O aplicativo de Finanças Pessoais foi criado pelos alunos do curso front end.
+O aplicativo de Finanças Pessoais foi criado por Aline Dias, João Gabriel e Rodrigo Andrade. Combinando conhecimentos adquiridos e o interesse em ajudar as pessoas a alcançarem a estabilidade financeira, os autores desenvolveram essa ferramenta para auxiliar os usuários no controle de suas despesas pessoais.
 
 ![imagem de Aline]( https://github.com/rodrigoacm10/finance-control-project/blob/master/Aline.png) 
 ![imagem de João]( https://github.com/rodrigoacm10/finance-control-project/blob/master/Jo%C3%A3o.png)![imagem de Rodrigo]( https://github.com/rodrigoacm10/finance-control-project/blob/master/Rodrigo.png)
 
-Alunos: Aline Dias, Joao Gabriel e Rodrigo Andrade. Combinando conhecimentos aprendidos em aula e o interesse em ajudar as pessoas a alcançarem a estabilidade financeira, os autores desenvolveram essa ferramenta para auxiliar os usuários no controle de suas despesas pessoais.
 
-### Agradecimentos
-Gostaríamos de agradecer a todos os membros da equipe em especial ao professor Reydne Bruno e aos envolvidos na instituição pela oportunidade de colocarmos em prática nossos conhecimentos. Este apoio e contribuições foram fundamentais para o sucesso deste projeto.
 
 
 
