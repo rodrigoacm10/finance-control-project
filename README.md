@@ -37,7 +37,7 @@ O aplicativo de Finanças Pessoais foi construído utilizando as seguintes tecno
 *	Interface de Usuário: HTML, CSS.
 
 ### Ligações
-**	 [Link para o aplicativo](https://github.com/rodrigoacm10/finance-control-project)
+	 [Link para o aplicativo](https://github.com/rodrigoacm10/finance-control-project)
 
 ### Processo
 Durante o desenvolvimento do aplicativo de Finanças Pessoais, foram seguidas as seguintes etapas:
@@ -55,11 +55,6 @@ O aplicativo de Finanças Pessoais foi desenvolvido pela equipe composta por Ali
 
 ### Autores
 O aplicativo de Finanças Pessoais foi criado por Aline Dias, João Gabriel e Rodrigo Andrade. Combinando conhecimentos adquiridos e o interesse em ajudar as pessoas a alcançarem a estabilidade financeira, os autores desenvolveram essa ferramenta para auxiliar os usuários no controle de suas despesas pessoais.
-
-![imagem de Aline]( https://github.com/rodrigoacm10/finance-control-project/blob/master/Aline.png) 
-![imagem de João]( https://github.com/rodrigoacm10/finance-control-project/blob/master/Jo%C3%A3o.png)![imagem de Rodrigo]( https://github.com/rodrigoacm10/finance-control-project/blob/master/Rodrigo.png)
-
-
 
 
 
