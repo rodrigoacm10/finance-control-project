@@ -37,7 +37,7 @@ O aplicativo de Finanças Pessoais foi construído utilizando as seguintes tecno
 *	Interface de Usuário: HTML, CSS.
 
 ### Ligações
-	 [Link para o aplicativo](https://github.com/rodrigoacm10/finance-control-project)
+	 [Link para o aplicativo](control-finance.netlify.app)
 
 ### Processo
 Durante o desenvolvimento do aplicativo de Finanças Pessoais, foram seguidas as seguintes etapas:
