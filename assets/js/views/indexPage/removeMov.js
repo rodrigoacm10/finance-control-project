@@ -5,9 +5,8 @@ class RemoveMov {
 
   addHandlerRomveMov(handler) {
     this._btnRemove = document.querySelectorAll(".icon-mov");
-    console.log(this._btnRemove);
+
     this._btnRemove.forEach((el) => {
-      console.log(el);
       el.addEventListener("click", function (e) {
         e.preventDefault();
         const clicked = e.target.closest(".moviment");

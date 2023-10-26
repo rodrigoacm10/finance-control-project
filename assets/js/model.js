@@ -308,13 +308,14 @@ export const state = {
 // currentAccount: accounts[currentAccountIndex],
 
 export const findIndexAccout = function (arrData) {
+  console.log(arrData);
   const userEmail = arrData[0];
   const userPassword = +arrData[1];
 
   console.log("aaaa", userEmail);
   console.log("aaaaaaa", userPassword);
   const accIndex = state.accounts.findIndex(
-    (el) => el.userEmail === userEmail && el.password === userPassword
+    (el) => el.userEmail === userEmail && el.password == userPassword
   );
   console.log(accIndex);
   // state.currentAccount = state.accounts[accIndex];
@@ -322,7 +323,30 @@ export const findIndexAccout = function (arrData) {
   console.log(state.currentAccountIndex);
 };
 
+export const saveAllAccountsInfos = function () {
+  console.log(state);
+  localStorage.setItem("accounts", JSON.stringify(state));
+  const accountsInfos = localStorage.getItem("accounts");
+  console.log(
+    "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaassssssssssssssssssss"
+  );
+  console.log(JSON.parse(accountsInfos));
+  // state = JSON.parse(accountsInfos);
+  Object.assign(state, JSON.parse(accountsInfos));
+  console.log(state);
+};
+
+export const onlyGetLocal = function () {
+  const testLocalStorage = localStorage.getItem("accounts");
+  console.log(
+    "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaassssssssssssssssssss"
+  );
+  console.log(JSON.parse(testLocalStorage));
+  return JSON.parse(testLocalStorage);
+};
+
 export const addMovimentToState = function (accIndex, movBlock) {
+  // pra chmar o get localstorage aki
   state.accounts[accIndex].moviments.push(movBlock);
 };
 
@@ -346,10 +370,12 @@ export const addMovimentRealizedToState = function (accIndex, movBlock) {
   state.accounts[accIndex].movimentsRealized.push(movBlock);
 };
 
+// também chamar aki o setItem localstorage
 export const removingMovGeral = function (accIndex, movIndex) {
   if (movIndex > -1) {
     const valueMov = state.accounts[accIndex].moviments[movIndex].value;
     state.accounts[accIndex].moviments.splice(movIndex, 1);
+
     return valueMov;
   }
 };
@@ -358,6 +384,7 @@ export const removingMovRealized = function (accIndex, movIndex) {
   if (movIndex > -1) {
     const valueMov = state.accounts[accIndex].movimentsRealized[movIndex].value;
     state.accounts[accIndex].movimentsRealized.splice(movIndex, 1);
+
     return valueMov;
   } else return false;
 };
@@ -366,6 +393,7 @@ export const removingMovPaid = function (accIndex, movIndex) {
   if (movIndex > -1) {
     const valueMov = state.accounts[accIndex].movimentsPaid[movIndex].value;
     state.accounts[accIndex].movimentsPaid.splice(movIndex, 1);
+
     return valueMov;
   } else return false;
 };
@@ -374,6 +402,7 @@ export const removingMovReceived = function (accIndex, movIndex) {
   if (movIndex > -1) {
     const valueMov = state.accounts[accIndex].movimentsRecived[movIndex].value;
     state.accounts[accIndex].movimentsRecived.splice(movIndex, 1);
+
     return valueMov;
   } else return false;
 };
@@ -382,6 +411,7 @@ export const removingMovToPay = function (accIndex, movIndex) {
   if (movIndex > -1) {
     const valueMov = state.accounts[accIndex].movimentsToPay[movIndex].value;
     state.accounts[accIndex].movimentsToPay.splice(movIndex, 1);
+
     return valueMov;
   } else return false;
 };
@@ -390,6 +420,7 @@ export const removingMovToReceive = function (accIndex, movIndex) {
   if (movIndex > -1) {
     const valueMov = state.accounts[accIndex].movimentsToRecive[movIndex].value;
     state.accounts[accIndex].movimentsToRecive.splice(movIndex, 1);
+
     return valueMov;
   } else return false;
 };
