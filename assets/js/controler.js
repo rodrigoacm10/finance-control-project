@@ -23,10 +23,13 @@ const controlerGetOutAcc = function () {
 };
 
 const controlerLoadPage = function () {
-  // tem q ser uma estrutura dessa
-  // const { index, nome, sobrenome, senha, email } =LoadPageInfoView.getAccIndex();
   const { indexAcc, name, surname, email, password, confirmPassword } =
     LoadPageInfoView.getAccIndex();
+
+  if (model.onlyGetLocal()) {
+    Object.assign(model.state, model.onlyGetLocal());
+  }
+
   console.log(model.state);
 
   if (!model.state.accounts[indexAcc]) {
@@ -49,11 +52,11 @@ const controlerLoadPage = function () {
   }
   console.log(model.state);
 
-  // model.state.currentAccountIndex = LoadPageInfoView.getAccIndex();
   model.state.currentAccountIndex = indexAcc;
   model.state.currentAccount =
     model.state.accounts[model.state.currentAccountIndex];
   const account = model.state.currentAccount;
+  console.log(account);
 
   LoadPageInfoView.addInformations(account);
   LoadPageInfoView.addMoviments(account);
@@ -72,24 +75,29 @@ const addMovToArr = function (situation, obj) {
     model.state.currentAccount.totalValue = ValuesRender.attTotalvalue(
       obj.value
     );
+    model.saveAllAccountsInfos();
   }
 
   if (situation === "recebido") {
     model.addMovimentReceivedToState(model.state.currentAccountIndex, obj);
+    model.saveAllAccountsInfos();
   } else if (situation === "pago") {
     model.addMovimentPaidToState(model.state.currentAccountIndex, obj);
+    model.saveAllAccountsInfos();
   } else if (situation === "a receber") {
     model.addMovimentToReceiveToState(model.state.currentAccountIndex, obj);
 
     model.state.currentAccount.valueToReceive = ValuesRender.attToReceiveValue(
       obj.value
     );
+    model.saveAllAccountsInfos();
   } else if (situation === "a pagar") {
     model.addMovimentToPayToState(model.state.currentAccountIndex, obj);
 
     model.state.currentAccount.valueToPay = ValuesRender.attToPayValue(
       obj.value
     );
+    model.saveAllAccountsInfos();
   }
 };
 
@@ -102,6 +110,7 @@ const controlerAddMovRevenue = function () {
 
   RemoveMov.addHandlerRomveMov(controlRemoveMov);
   GraphView.addMovsToGraphAllMov(model.state.currentAccount.moviments);
+  model.saveAllAccountsInfos();
 };
 
 const controlerAddMovExpense = function () {
@@ -113,6 +122,7 @@ const controlerAddMovExpense = function () {
 
   RemoveMov.addHandlerRomveMov(controlRemoveMov);
   GraphView.addMovsToGraphAllMov(model.state.currentAccount.moviments);
+  model.saveAllAccountsInfos();
 };
 
 const thorowBackMoney = function (
@@ -125,11 +135,15 @@ const thorowBackMoney = function (
 ) {
   if (realized) {
     model.throwTotalValue(model.state.currentAccountIndex, realized);
+    model.saveAllAccountsInfos();
   } else if (toPay) {
     model.throwToPayValue(model.state.currentAccountIndex, toPay);
+    model.saveAllAccountsInfos();
   } else if (toReceive) {
     model.throwToReceiveValue(model.state.currentAccountIndex, toReceive);
+    model.saveAllAccountsInfos();
   }
+  model.saveAllAccountsInfos();
 };
 
 const controlRemoveMov = function (movElement) {
@@ -200,6 +214,7 @@ const controlRemoveMov = function (movElement) {
   RemoveMov.clearAllContainer();
   controlerLoadPage();
   GraphView.addMovsToGraphAllMov(model.state.currentAccount.moviments);
+  model.saveAllAccountsInfos();
 };
 
 const controlFilters = function () {

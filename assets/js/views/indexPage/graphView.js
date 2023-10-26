@@ -14,7 +14,6 @@ class GraphView {
       const numModule = Math.abs(mov.value);
       const revenueOrExpense = mov.value > 0 ? 0 : 1;
       const arrIndex = +mov.data.split("-")[1] - 1;
-      console.log(revenueOrExpense, arrIndex, numModule);
 
       this._graphAll.data.datasets[revenueOrExpense].data[arrIndex] +=
         numModule;
