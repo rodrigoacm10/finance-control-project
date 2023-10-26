@@ -17,15 +17,23 @@ class LoadPageInfoView extends View {
     const accIndex = urlParams.get("parametro1");
     const testando = urlParams.get("parametro2");
     const name = urlParams.get("name");
-    const surName = urlParams.get("surname");
+    const surname = urlParams.get("surname");
     const email = urlParams.get("email");
     const password = urlParams.get("password");
     const confirmPassword = urlParams.get("confirmpassword");
 
     console.log("- as- s -fg dfg - -ghg- ", testando);
-    console.log(accIndex, name, surName, email, password, confirmPassword);
+    console.log(accIndex, name, surname, email, password, confirmPassword);
     // passar um objeto com os parametros
-    return accIndex;
+    // return accIndex;
+    return {
+      indexAcc: accIndex,
+      name,
+      surname,
+      email,
+      password,
+      confirmPassword,
+    };
   }
 
   addMoviments(data) {

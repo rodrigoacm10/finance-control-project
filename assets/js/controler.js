@@ -25,7 +25,32 @@ const controlerGetOutAcc = function () {
 const controlerLoadPage = function () {
   // tem q ser uma estrutura dessa
   // const { index, nome, sobrenome, senha, email } =LoadPageInfoView.getAccIndex();
-  model.state.currentAccountIndex = LoadPageInfoView.getAccIndex();
+  const { indexAcc, name, surname, email, password, confirmPassword } =
+    LoadPageInfoView.getAccIndex();
+  console.log(model.state);
+
+  if (!model.state.accounts[indexAcc]) {
+    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+    model.state.accounts.push({
+      userEmail: email,
+      password: password,
+      moviments: [],
+      username: [name, surname].join(" "),
+      userImage: "assets/img/desconhecido.jpg",
+      totalValue: 0,
+      valueToPay: 0,
+      valueToReceive: 0,
+      movimentsRealized: [],
+      movimentsRecived: [],
+      movimentsPaid: [],
+      movimentsToRecive: [],
+      movimentsToPay: [],
+    });
+  }
+  console.log(model.state);
+
+  // model.state.currentAccountIndex = LoadPageInfoView.getAccIndex();
+  model.state.currentAccountIndex = indexAcc;
   model.state.currentAccount =
     model.state.accounts[model.state.currentAccountIndex];
   const account = model.state.currentAccount;
