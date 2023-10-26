@@ -88,10 +88,10 @@ class CreateAccView {
     }
   }
 
-  toggleConfirmPassword() {
-    this._confirmPasswordInput.classList.toggle("error-to-cofirm-2");
-    this._errorConfirmPassword.classList.toggle("hidden");
-  }
+  // toggleConfirmPassword() {
+  //   this._confirmPasswordInput.classList.toggle("error-to-cofirm-2");
+  //   this._errorConfirmPassword.classList.toggle("hidden");
+  // }
 
   verifyConfirmPassword() {
     // console.log(this._passwordInput.value, this._confirmPasswordInput.value);
@@ -112,7 +112,7 @@ class CreateAccView {
     // window.location.href = `index.html?parametro1=${indexAcc}`;
     // passar os parametros index nome sobrenome senha email
     // window.location.href = `init.html?parametro1=${indexAcc}?parametro2=teste`;
-    window.location.href = `init.html?parametro1=0&parametro2=teste&name=teste&surname=teste&email=teste&password=teste&confirmpassword=teste`;
+    window.location.href = `init.html?parametro1=${indexAcc}&parametro2=teste&name=${this._nameInput.value}&surname=${this._surnameInput.value}&email=${this._emailInput.value}&password=${this._passwordInput.value}&confirmpassword=${this._confirmPasswordInput.value}`;
   }
 
   registBtn(handler) {

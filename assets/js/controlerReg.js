@@ -9,12 +9,16 @@ import CreateAccView from "./views/initPage/createAccView.js";
 
 const controlRegistring = function () {
   console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+  console.log(model.state.accounts);
+  console.log(model.state.accounts[2]);
+  console.log(model.state.accounts.length);
+  console.log(model.state.accounts[model.state.accounts.length]);
 
-  //   if (!CreateAccView.verifyAllInputs()) {
-  //     return;
-  //   }
+  if (!CreateAccView.verifyAllInputs()) {
+    return;
+  }
 
-  if (CreateAccView.verifyEmail()) {
+  if (!CreateAccView.verifyEmail()) {
     return;
   }
 
@@ -23,7 +27,7 @@ const controlRegistring = function () {
     return;
   }
 
-  CreateAccView.initPageAndCreatingAcc();
+  CreateAccView.initPageAndCreatingAcc(model.state.accounts.length);
 
   //   CreateAccView.movToIndexPage(1);
   //   try {
