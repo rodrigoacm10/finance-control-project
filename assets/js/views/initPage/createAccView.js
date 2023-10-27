@@ -12,24 +12,8 @@ class CreateAccView {
   _formElement = document.querySelector(".form-container");
   _errorNoFilled = document.querySelector(".error-no-filled");
 
-  //  vai fzr a sm coisa de login View, só q passando os valores dos inputs do formulário
-
-  // registring(a) {
-  //   this._btnRegist.addEventListener("click", function () {
-  //     console.log("asadaa");
-  //     console.log(this._formElement);
-  //     a();
-  //   });
-  // }
-
-  //   error-no-filled
-
-  // error-to-cofirm-2
-
   verifyFill(inputEl) {
-    console.log(inputEl.value);
     if (inputEl.value == "") {
-      console.log("não t[a preenchido ");
       inputEl.classList.add("error-to-cofirm-2");
       this._errorNoFilled.classList.remove("hidden");
       return false;
@@ -60,7 +44,6 @@ class CreateAccView {
   }
 
   verifyEmail() {
-    // this.verifyFill(this._emailInput);
     const emailStr = this._emailInput.value;
     const emailVerifyProviderFirstValid = this._emailInput.value.split("@");
     const emailVerifyProviderSecondValid = emailVerifyProviderFirstValid[1]
@@ -69,14 +52,7 @@ class CreateAccView {
 
     const emailArroba = emailStr.includes("@");
     const emailCom = emailStr.includes(".com");
-    console.log(
-      emailStr,
-      emailArroba,
-      emailCom,
-      emailVerifyProviderFirstValid,
-      emailVerifyProviderSecondValid
-    );
-    // .length === 2
+
     if (!emailArroba || !emailCom || emailVerifyProviderSecondValid[0] == "") {
       this._emailInput.classList.add("error-to-cofirm-2");
       this._errorEmail.classList.remove("hidden");
@@ -88,15 +64,7 @@ class CreateAccView {
     }
   }
 
-  // toggleConfirmPassword() {
-  //   this._confirmPasswordInput.classList.toggle("error-to-cofirm-2");
-  //   this._errorConfirmPassword.classList.toggle("hidden");
-  // }
-
   verifyConfirmPassword() {
-    // console.log(this._passwordInput.value, this._confirmPasswordInput.value);
-    // console.log("a@gmail.com".includes("@"));
-
     if (this._passwordInput.value != this._confirmPasswordInput.value) {
       this._confirmPasswordInput.classList.add("error-to-cofirm-2");
       this._errorConfirmPassword.classList.remove("hidden");
@@ -109,9 +77,6 @@ class CreateAccView {
   }
 
   initPageAndCreatingAcc(indexAcc) {
-    // window.location.href = `index.html?parametro1=${indexAcc}`;
-    // passar os parametros index nome sobrenome senha email
-    // window.location.href = `init.html?parametro1=${indexAcc}?parametro2=teste`;
     window.location.href = `init.html?parametro1=${indexAcc}&parametro2=teste&name=${this._nameInput.value}&surname=${this._surnameInput.value}&email=${this._emailInput.value}&password=${this._passwordInput.value}&confirmpassword=${this._confirmPasswordInput.value}`;
   }
 

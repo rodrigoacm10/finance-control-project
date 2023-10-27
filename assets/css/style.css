@@ -189,6 +189,10 @@ body {
   font-size: 1.2rem;
 } */
 
+.error-p {
+  margin-bottom: 1.2rem;
+}
+
 /**********************
   REGISTER PAGE
 ***********************/
@@ -290,6 +294,7 @@ body {
   background-color: #636363;
 }
 
+.error-p,
 .error-no-filled,
 .error-to-cofirm,
 .error-to-email {

@@ -30,10 +30,7 @@ const controlerLoadPage = function () {
     Object.assign(model.state, model.onlyGetLocal());
   }
 
-  console.log(model.state);
-
   if (!model.state.accounts[indexAcc]) {
-    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
     model.state.accounts.push({
       userEmail: email,
       password: password,
@@ -50,14 +47,11 @@ const controlerLoadPage = function () {
       movimentsToPay: [],
     });
   }
-  console.log(model.state);
 
   model.state.currentAccountIndex = indexAcc;
   model.state.currentAccount =
     model.state.accounts[model.state.currentAccountIndex];
   const account = model.state.currentAccount;
-  console.log(account);
-  console.log("asscascascsijgdijig", model.state.currentAccountIndex);
 
   LoadPageInfoView.addInformations(account);
   LoadPageInfoView.addMoviments(account);
@@ -125,7 +119,7 @@ const controlerAddMovExpense = function () {
   GraphView.addMovsToGraphAllMov(model.state.currentAccount.moviments);
   model.saveAllAccountsInfos(model.state.currentAccountIndex);
 };
-
+// a development development development
 const thorowBackMoney = function (
   geral,
   realized,
@@ -144,13 +138,10 @@ const thorowBackMoney = function (
     model.throwToReceiveValue(model.state.currentAccountIndex, toReceive);
     model.saveAllAccountsInfos(model.state.currentAccountIndex);
   }
-  // model.saveAllAccountsInfos(model.state.currentAccountIndex);
 };
 
 const controlRemoveMov = function (movElement) {
-  console.log("--------", movElement);
   const idControl = RemoveMov.removingMov(movElement);
-  console.log(idControl);
 
   const indexMovGeral = model.state.currentAccount.moviments.findIndex(
     (el) => el.id == idControl
@@ -209,7 +200,6 @@ const controlRemoveMov = function (movElement) {
     indexMovToReceive
   );
 
-  console.log(thorowBackMoney);
   thorowBackMoney(test1, test2, test3, test4, test5, test6);
 
   RemoveMov.clearAllContainer();
