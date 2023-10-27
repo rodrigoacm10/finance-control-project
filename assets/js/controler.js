@@ -119,7 +119,7 @@ const controlerAddMovExpense = function () {
   GraphView.addMovsToGraphAllMov(model.state.currentAccount.moviments);
   model.saveAllAccountsInfos(model.state.currentAccountIndex);
 };
-// a
+// a development development development
 const thorowBackMoney = function (
   geral,
   realized,
