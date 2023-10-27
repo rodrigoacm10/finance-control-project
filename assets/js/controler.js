@@ -57,6 +57,7 @@ const controlerLoadPage = function () {
     model.state.accounts[model.state.currentAccountIndex];
   const account = model.state.currentAccount;
   console.log(account);
+  console.log("asscascascsijgdijig", model.state.currentAccountIndex);
 
   LoadPageInfoView.addInformations(account);
   LoadPageInfoView.addMoviments(account);
@@ -75,29 +76,29 @@ const addMovToArr = function (situation, obj) {
     model.state.currentAccount.totalValue = ValuesRender.attTotalvalue(
       obj.value
     );
-    model.saveAllAccountsInfos();
+    model.saveAllAccountsInfos(model.state.currentAccountIndex);
   }
 
   if (situation === "recebido") {
     model.addMovimentReceivedToState(model.state.currentAccountIndex, obj);
-    model.saveAllAccountsInfos();
+    model.saveAllAccountsInfos(model.state.currentAccountIndex);
   } else if (situation === "pago") {
     model.addMovimentPaidToState(model.state.currentAccountIndex, obj);
-    model.saveAllAccountsInfos();
+    model.saveAllAccountsInfos(model.state.currentAccountIndex);
   } else if (situation === "a receber") {
     model.addMovimentToReceiveToState(model.state.currentAccountIndex, obj);
 
     model.state.currentAccount.valueToReceive = ValuesRender.attToReceiveValue(
       obj.value
     );
-    model.saveAllAccountsInfos();
+    model.saveAllAccountsInfos(model.state.currentAccountIndex);
   } else if (situation === "a pagar") {
     model.addMovimentToPayToState(model.state.currentAccountIndex, obj);
 
     model.state.currentAccount.valueToPay = ValuesRender.attToPayValue(
       obj.value
     );
-    model.saveAllAccountsInfos();
+    model.saveAllAccountsInfos(model.state.currentAccountIndex);
   }
 };
 
@@ -110,7 +111,7 @@ const controlerAddMovRevenue = function () {
 
   RemoveMov.addHandlerRomveMov(controlRemoveMov);
   GraphView.addMovsToGraphAllMov(model.state.currentAccount.moviments);
-  model.saveAllAccountsInfos();
+  model.saveAllAccountsInfos(model.state.currentAccountIndex);
 };
 
 const controlerAddMovExpense = function () {
@@ -122,7 +123,7 @@ const controlerAddMovExpense = function () {
 
   RemoveMov.addHandlerRomveMov(controlRemoveMov);
   GraphView.addMovsToGraphAllMov(model.state.currentAccount.moviments);
-  model.saveAllAccountsInfos();
+  model.saveAllAccountsInfos(model.state.currentAccountIndex);
 };
 
 const thorowBackMoney = function (
@@ -135,15 +136,15 @@ const thorowBackMoney = function (
 ) {
   if (realized) {
     model.throwTotalValue(model.state.currentAccountIndex, realized);
-    model.saveAllAccountsInfos();
+    model.saveAllAccountsInfos(model.state.currentAccountIndex);
   } else if (toPay) {
     model.throwToPayValue(model.state.currentAccountIndex, toPay);
-    model.saveAllAccountsInfos();
+    model.saveAllAccountsInfos(model.state.currentAccountIndex);
   } else if (toReceive) {
     model.throwToReceiveValue(model.state.currentAccountIndex, toReceive);
-    model.saveAllAccountsInfos();
+    model.saveAllAccountsInfos(model.state.currentAccountIndex);
   }
-  model.saveAllAccountsInfos();
+  // model.saveAllAccountsInfos(model.state.currentAccountIndex);
 };
 
 const controlRemoveMov = function (movElement) {
@@ -214,7 +215,7 @@ const controlRemoveMov = function (movElement) {
   RemoveMov.clearAllContainer();
   controlerLoadPage();
   GraphView.addMovsToGraphAllMov(model.state.currentAccount.moviments);
-  model.saveAllAccountsInfos();
+  model.saveAllAccountsInfos(model.state.currentAccountIndex);
 };
 
 const controlFilters = function () {

@@ -120,6 +120,7 @@ body {
   margin: 0 auto;
   border: 1px solid #ebebeb;
   padding: 9.6rem 4.8rem;
+  padding-top: 7.2rem !important;
   border-radius: 9px;
 }
 
@@ -184,6 +185,10 @@ body {
   justify-content: space-between;
 }
 
+/* .create-acc {
+  font-size: 1.2rem;
+} */
+
 /**********************
   REGISTER PAGE
 ***********************/
@@ -221,6 +226,11 @@ body {
   margin-bottom: 4rem;
 }
 
+.form-title-log {
+  margin-bottom: 2.4rem;
+}
+
+.form-title-log,
 .form-title-reg {
   font-size: 2.4rem;
 }
