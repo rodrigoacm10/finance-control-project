@@ -305,55 +305,35 @@ export const state = {
   ],
 };
 
-// currentAccount: accounts[currentAccountIndex],
-
 export const findIndexAccout = function (arrData) {
-  console.log(arrData);
   const userEmail = arrData[0];
   const userPassword = +arrData[1];
 
-  console.log("aaaa", userEmail);
-  console.log("aaaaaaa", userPassword);
   const accIndex = state.accounts.findIndex(
     (el) => el.userEmail === userEmail && el.password == userPassword
   );
-  console.log(accIndex);
-  // state.currentAccount = state.accounts[accIndex];
+
   state.currentAccountIndex = accIndex;
-  console.log(state.currentAccountIndex);
 };
 
 export const saveAllAccountsInfos = function (indexAcc) {
-  console.log(state);
   localStorage.setItem("accounts", JSON.stringify(state));
   let accountsInfos = localStorage.getItem("accounts");
-  console.log(
-    "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaassssssssssssssssssss"
-  );
-  console.log(JSON.parse(accountsInfos));
+
   const accountInfoCur = JSON.parse(accountsInfos);
-  // Object.assign(state.accounts[indexAcc], accountInfoCur);
-  console.log("------------------------", accountInfoCur.currentAccount);
   Object.assign(state.accounts[indexAcc], accountInfoCur.currentAccount);
   localStorage.setItem("accounts", JSON.stringify(state));
   accountsInfos = localStorage.getItem("accounts");
-  // state = JSON.parse(accountsInfos);
   Object.assign(state, JSON.parse(accountsInfos));
-
-  console.log(state);
 };
 
 export const onlyGetLocal = function () {
   const testLocalStorage = localStorage.getItem("accounts");
-  console.log(
-    "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaassssssssssssssssssss"
-  );
-  console.log(JSON.parse(testLocalStorage));
+
   return JSON.parse(testLocalStorage);
 };
 
 export const addMovimentToState = function (accIndex, movBlock) {
-  // pra chmar o get localstorage aki
   state.accounts[accIndex].moviments.push(movBlock);
 };
 
@@ -377,7 +357,6 @@ export const addMovimentRealizedToState = function (accIndex, movBlock) {
   state.accounts[accIndex].movimentsRealized.push(movBlock);
 };
 
-// também chamar aki o setItem localstorage
 export const removingMovGeral = function (accIndex, movIndex) {
   if (movIndex > -1) {
     const valueMov = state.accounts[accIndex].moviments[movIndex].value;
@@ -433,17 +412,13 @@ export const removingMovToReceive = function (accIndex, movIndex) {
 };
 
 export const throwTotalValue = function (accIndex, valueReceived) {
-  console.log("b-b-b-b--b-b-b--b", valueReceived);
   state.accounts[accIndex].totalValue += -valueReceived;
-  console.log(state.accounts[accIndex]);
 };
 
 export const throwToPayValue = function (accIndex, valueReceived) {
   state.accounts[accIndex].valueToPay += valueReceived;
-  console.log(state.accounts[accIndex]);
 };
 
 export const throwToReceiveValue = function (accIndex, valueReceived) {
   state.accounts[accIndex].valueToReceive += -valueReceived;
-  console.log(state.accounts[accIndex]);
 };

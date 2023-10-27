@@ -6,12 +6,6 @@ const controlRegistring = function () {
     Object.assign(model.state, model.onlyGetLocal());
   }
 
-  // console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-  // console.log(model.state.accounts);
-  // console.log(model.state.accounts[2]);
-  // console.log(model.state.accounts.length);
-  // console.log(model.state.accounts[model.state.accounts.length]);
-
   if (!CreateAccView.verifyAllInputs()) {
     return;
   }
@@ -28,7 +22,6 @@ const controlRegistring = function () {
 };
 
 const initPageInit = function () {
-  //   CreateAccView.registring(tesat);
   CreateAccView.registBtn(controlRegistring);
 };
 initPageInit();

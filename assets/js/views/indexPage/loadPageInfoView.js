@@ -11,8 +11,6 @@ class LoadPageInfoView extends View {
   _movimentsContainer = document.querySelector(".extract-mov-container");
 
   getAccIndex() {
-    console.log("sdfsdf");
-    // vou ter q pegar os parametros de index nome, sobreome, senha, email
     const urlParams = new URLSearchParams(window.location.search);
     const accIndex = urlParams.get("parametro1");
     const testando = urlParams.get("parametro2");
@@ -22,10 +20,6 @@ class LoadPageInfoView extends View {
     const password = urlParams.get("password");
     const confirmPassword = urlParams.get("confirmpassword");
 
-    console.log("- as- s -fg dfg - -ghg- ", testando);
-    console.log(accIndex, name, surname, email, password, confirmPassword);
-    // passar um objeto com os parametros
-    // return accIndex;
     return {
       indexAcc: accIndex,
       name,
@@ -80,10 +74,8 @@ class LoadPageInfoView extends View {
     const totalValueContent = this._totalValue.textContent.split(" ");
     const toPayValueContent = this._toPayValue.textContent.split(" ");
     const toReceiveValueContent = this._toReceiveValue.textContent.split(" ");
-    console.log("a-a-a-a-a-a-a-aaa", totalValueContent);
 
     const totalValueCurAcc = +data.totalValue;
-    console.log("zz-z-z-z-z-zz--zz--z", totalValueCurAcc);
 
     const toPayValueCurAcc = +data.valueToPay;
 
