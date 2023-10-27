@@ -323,16 +323,23 @@ export const findIndexAccout = function (arrData) {
   console.log(state.currentAccountIndex);
 };
 
-export const saveAllAccountsInfos = function () {
+export const saveAllAccountsInfos = function (indexAcc) {
   console.log(state);
   localStorage.setItem("accounts", JSON.stringify(state));
-  const accountsInfos = localStorage.getItem("accounts");
+  let accountsInfos = localStorage.getItem("accounts");
   console.log(
     "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaassssssssssssssssssss"
   );
   console.log(JSON.parse(accountsInfos));
+  const accountInfoCur = JSON.parse(accountsInfos);
+  // Object.assign(state.accounts[indexAcc], accountInfoCur);
+  console.log("------------------------", accountInfoCur.currentAccount);
+  Object.assign(state.accounts[indexAcc], accountInfoCur.currentAccount);
+  localStorage.setItem("accounts", JSON.stringify(state));
+  accountsInfos = localStorage.getItem("accounts");
   // state = JSON.parse(accountsInfos);
   Object.assign(state, JSON.parse(accountsInfos));
+
   console.log(state);
 };
 
